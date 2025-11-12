@@ -1,70 +1,40 @@
-﻿using DataComp.StronaFirmowa.Strona.Components;
-// using Datacomp.StronaFirmowa.Fundament.Data; // ❌ ZAKOMENTOWANE
-using Datacomp.StronaFirmowa.Fundament.Resources;
-// using Datacomp.StronaFirmowa.Fundament.Services; // ❌ ZAKOMENTOWANE
-// using Datacomp.StronaFirmowa.Fundament.Services.Interfaces; // ❌ ZAKOMENTOWANE
-using Microsoft.AspNetCore.Localization;
-// using Microsoft.EntityFrameworkCore; // ❌ ZAKOMENTOWANE
-using Microsoft.Extensions.Localization;
-using System.Globalization;
+﻿using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using DataComp.StronaFirmowa.Strona.Components;
 using Telerik.Blazor.Services;
+using Microsoft.Extensions.Localization;
+using Datacomp.StronaFirmowa.Fundament.Resources;
+using System.Globalization;
+using Microsoft.JSInterop;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebAssemblyHostBuilder.CreateDefault(args);
+builder.RootComponents.Add<App>("#app");
+builder.RootComponents.Add<HeadOutlet>("head::after");
+
+// HTTP Client
+builder.Services.AddScoped(sp => new HttpClient
+{
+    BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+});
 
 // Telerik Blazor
 builder.Services.AddTelerikBlazor();
 
-#region Baza danych - WYŁĄCZONE DLA DEMO NA AZURE FREE
-// builder.Services.AddDbContext<ApplicationDbContext>(options =>
-//     options.UseSqlServer(
-//         builder.Configuration.GetConnectionString("DefaultConnection")));
-#endregion
-
-#region Serwisy z Fundament - WYŁĄCZONE DLA DEMO NA AZURE FREE
-// builder.Services.AddScoped<IFaqSerwis, FaqSerwis>();
-// builder.Services.AddScoped<IBlogSerwis, BlogSerwis>();
-// builder.Services.AddScoped<IAktualnosciSerwis, AktualnosciSerwis>();
-// builder.Services.AddScoped<IKontaktSerwis, KontaktSerwis>();
-// builder.Services.AddScoped<IAutentykacjaSerwis, AutentykacjaSerwis>();
-#endregion
-
-#region Lokalizacja - TO ZOSTAJE I BĘDZIE DZIAŁAĆ
+// Lokalizacja
 builder.Services.AddLocalization();
 builder.Services.AddSingleton<ITelerikStringLocalizer, ResxLocalizer>();
-builder.Services.AddControllers();
-#endregion
 
-// Blazor Components
-builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+var host = builder.Build();
 
-var app = builder.Build();
+// ✅ Odczytaj kulturę z localStorage (jeśli istnieje)
+var js = host.Services.GetRequiredService<IJSRuntime>();
+var cultureFromStorage = await js.InvokeAsync<string>("localStorage.getItem", "culture");
 
-// Configure the HTTP request pipeline
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    app.UseHsts();
-}
+var culture = !string.IsNullOrEmpty(cultureFromStorage)
+    ? new CultureInfo(cultureFromStorage)
+    : new CultureInfo("pl-PL");
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+CultureInfo.DefaultThreadCurrentCulture = culture;
+CultureInfo.DefaultThreadCurrentUICulture = culture;
 
-#region Lokalizacja Middleware
-var supportedCultures = new[] { "pl-PL", "en-US" };
-var localizationOptions = new RequestLocalizationOptions()
-    .SetDefaultCulture(supportedCultures[0])
-    .AddSupportedCultures(supportedCultures)
-    .AddSupportedUICultures(supportedCultures);
-
-localizationOptions.RequestCultureProviders.Insert(0, new CookieRequestCultureProvider());
-
-app.UseRequestLocalization(localizationOptions);
-#endregion
-
-app.UseAntiforgery();
-app.MapControllers();
-app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode();
-
-app.Run();
+await host.RunAsync();

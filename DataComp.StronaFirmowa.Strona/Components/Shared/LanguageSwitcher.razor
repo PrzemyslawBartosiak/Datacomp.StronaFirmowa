@@ -1,57 +1,45 @@
-@using System.Globalization
+﻿@using System.Globalization
 @inject NavigationManager Navigation
+@inject IJSRuntime JS
 
 <div class="language-switcher">
     <div class="culture-selector">
-        @foreach (var culture in SupportedCultures)
+        @foreach (var lang in Languages)
         {
-            <button type="button"
-                    class="culture-button @(IsCurrentCulture(culture.Name) ? "active" : "")"
-                    @onclick="@(() => ChangeCulture(culture.Name))"
-                    title="@culture.NativeName">
-                <span class="flag-icon flag-icon-@GetFlagCode(culture.Name)"></span>
-                <span class="culture-code">@GetShortCultureName(culture.Name)</span>
+            <button class="culture-button @(CurrentLanguage == lang.Code ? "active" : "")"
+                    @onclick="() => OnLanguageChanged(lang.Code)">
+                <span class="flag-icon flag-icon-@lang.Flag"></span>
+                <span class="culture-code">@lang.ShortName</span>
             </button>
         }
     </div>
 </div>
 
 @code {
-    private string CurrentCulture => CultureInfo.CurrentUICulture.Name;
+    private string CurrentLanguage => CultureInfo.CurrentUICulture.Name;
 
-    private List<CultureInfo> SupportedCultures { get; set; } = new()
+    private List<LanguageOption> Languages = new()
     {
-        new CultureInfo("pl-PL"),
-        new CultureInfo("en-US")
+        new LanguageOption { Code = "pl-PL", ShortName = "PL", Flag = "pl", Name = "Polski" },
+        new LanguageOption { Code = "en-US", ShortName = "EN", Flag = "us", Name = "English" }
     };
 
-    private bool IsCurrentCulture(string cultureName) => CurrentCulture == cultureName;
-
-    private void ChangeCulture(string culture)
+    private void OnLanguageChanged(string newLanguage)
     {
-        if (CurrentCulture == culture) return;
+        if (newLanguage == CurrentLanguage) return;
 
-        var uri = new Uri(Navigation.Uri)
-            .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
-        var cultureEscaped = Uri.EscapeDataString(culture);
-        var uriEscaped = Uri.EscapeDataString(uri);
+        // Zapisz wybór w localStorage
+        _ = JS.InvokeVoidAsync("localStorage.setItem", "culture", newLanguage);
 
-        Navigation.NavigateTo(
-            $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
-            forceLoad: true);
+        // Przeładuj stronę z nową kulturą
+        Navigation.NavigateTo(Navigation.Uri, forceLoad: true);
     }
 
-    private string GetFlagCode(string cultureName) => cultureName switch
+    public class LanguageOption
     {
-        "pl-PL" => "pl",
-        "en-US" => "us",
-        _ => "pl"
-    };
-
-    private string GetShortCultureName(string cultureName) => cultureName switch
-    {
-        "pl-PL" => "PL",
-        "en-US" => "EN",
-        _ => "PL"
-    };
+        public string Code { get; set; } = string.Empty;
+        public string ShortName { get; set; } = string.Empty;
+        public string Flag { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+    }
 }
