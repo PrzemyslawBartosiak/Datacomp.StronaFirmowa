@@ -1,0 +1,115 @@
+﻿@page "/produkt/czas-pracy"
+@using Telerik.SvgIcons
+
+<PageTitle>Czas pracy - Komax 2.0</PageTitle>
+
+<div class="wrap">
+    <div class="module-detail-header">
+        <div class="header-icon-wrapper">
+            <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="xl" />
+        </div>
+        <h1 class="display-3">Czas pracy</h1>
+        <p class="lead">Kompleksowe zarządzanie czasem pracy, grafikami i obecnościami</p>
+    </div>
+
+    <div class="module-detail-content">
+        <section class="feature-showcase">
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Calendar" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Grafiki i harmonogramy pracy</h3>
+                    <p>Tworzenie elastycznych grafików dla różnych działów i systemów czasu pracy. Obsługa wielozmianowości, pracy weekendowej i nietypowych układów czasu pracy zgodnie z KP.</p>
+                    <ul class="feature-list">
+                        <li>Wizualne planowanie grafików dla zespołów</li>
+                        <li>Szablony dla systemów ciągłych i zmianowych</li>
+                        <li>Automatyczna kontrola norm czasu pracy</li>
+                        <li>Publikacja grafików w Portalu pracownika</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.ClipboardText" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Ewidencja czasu rzeczywistego</h3>
+                    <p>Rejestracja wejść i wyjść z pracy, kontrola spóźnień i nadgodzin. Integracja z systemami kontroli dostępu i terminalami RCP. Pełna zgodność z wymaganiami PIP.</p>
+                    <ul class="feature-list">
+                        <li>Import danych z czytników i terminali</li>
+                        <li>Automatyczne rozliczanie przepracowanych godzin</li>
+                        <li>Wykrywanie anomalii i nieprawidłowości</li>
+                        <li>Raporty kontroli obecności dla menedżerów</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Inbox" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Urlopy, nieobecności i delegacje</h3>
+                    <p>Elektroniczny obieg wniosków urlopowych i zwolnień lekarskich. Planowanie zastępstw, limity urlopowe i automatyczne rozliczenia. Integracja z ZUS i PUE.</p>
+                    <ul class="feature-list">
+                        <li>Wnioski elektroniczne z workflow akceptacji</li>
+                        <li>Automatyczne wyliczanie limitów urlopowych</li>
+                        <li>Obsługa delegacji krajowych i zagranicznych</li>
+                        <li>Import e-ZLA z platformy PUE ZUS</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Korzyści dla Twojej firmy</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" Size="xl" />
+                    <h4>Zgodność z KP</h4>
+                    <p>Automatyczna kontrola norm czasu pracy i okresów odpoczynku</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Eye" Size="xl" />
+                    <h4>Pełna transparentność</h4>
+                    <p>Menedżerowie mają bieżący wgląd w obecności i absencje zespołu</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.DevicesSolid" Size="xl" />
+                    <h4>Dostęp mobilny</h4>
+                    <p>Pracownicy sprawdzają grafiki i składają wnioski z każdego urządzenia</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Share" Size="xl" />
+                    <h4>Integracja z Płacami</h4>
+                    <p>Dane przekazywane automatycznie do modułu rozliczeń płacowych</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Uporządkuj czas pracy</h2>
+                <p>Przekonaj się, jak Komax 2.0 ułatwi zarządzanie czasem pracy i obecnościami</p>
+                <div class="cta-buttons">
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                                   ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                                   Class="k-button-lg">
+                        <TelerikSvgIcon Icon="@SvgIcon.PaperPlane" /> Umów prezentację
+                    </TelerikButton>
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                                   ThemeColor="null"
+                                   Class="k-button-lg btn-secondary-cta">
+                        <TelerikSvgIcon Icon="@SvgIcon.ArrowLeft" /> Wróć do produktów
+                    </TelerikButton>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+}

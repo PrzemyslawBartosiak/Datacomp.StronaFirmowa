@@ -1,0 +1,24 @@
+﻿@using Datacomp.StronaFirmowa.Fundament.Resources
+@using Microsoft.Extensions.Localization
+@using Telerik.FontIcons
+@inject IStringLocalizer<SharedResources> Localizer
+
+<TelerikAppBar ThemeColor="null">
+    <AppBarSection>
+        <a href="/" class="brand" aria-label="@Localizer["Product_Name"]">
+            <img src="images/logo-firmowe.png" alt="@Localizer["Product_Name"]" class="brand-logo" />
+        </a>
+    </AppBarSection>
+
+    <AppBarSpacer />
+
+    <AppBarSection>
+        <Navigation />
+    </AppBarSection>
+
+    <AppBarSpacer />
+
+    <AppBarSection class="header-right-section">
+        <LanguageSwitcher />
+    </AppBarSection>
+</TelerikAppBar>

@@ -1,0 +1,57 @@
+@using System.Globalization
+@inject NavigationManager Navigation
+
+<div class="language-switcher">
+    <div class="culture-selector">
+        @foreach (var culture in SupportedCultures)
+        {
+            <button type="button"
+                    class="culture-button @(IsCurrentCulture(culture.Name) ? "active" : "")"
+                    @onclick="@(() => ChangeCulture(culture.Name))"
+                    title="@culture.NativeName">
+                <span class="flag-icon flag-icon-@GetFlagCode(culture.Name)"></span>
+                <span class="culture-code">@GetShortCultureName(culture.Name)</span>
+            </button>
+        }
+    </div>
+</div>
+
+@code {
+    private string CurrentCulture => CultureInfo.CurrentUICulture.Name;
+
+    private List<CultureInfo> SupportedCultures { get; set; } = new()
+    {
+        new CultureInfo("pl-PL"),
+        new CultureInfo("en-US")
+    };
+
+    private bool IsCurrentCulture(string cultureName) => CurrentCulture == cultureName;
+
+    private void ChangeCulture(string culture)
+    {
+        if (CurrentCulture == culture) return;
+
+        var uri = new Uri(Navigation.Uri)
+            .GetComponents(UriComponents.PathAndQuery, UriFormat.Unescaped);
+        var cultureEscaped = Uri.EscapeDataString(culture);
+        var uriEscaped = Uri.EscapeDataString(uri);
+
+        Navigation.NavigateTo(
+            $"Culture/Set?culture={cultureEscaped}&redirectUri={uriEscaped}",
+            forceLoad: true);
+    }
+
+    private string GetFlagCode(string cultureName) => cultureName switch
+    {
+        "pl-PL" => "pl",
+        "en-US" => "us",
+        _ => "pl"
+    };
+
+    private string GetShortCultureName(string cultureName) => cultureName switch
+    {
+        "pl-PL" => "PL",
+        "en-US" => "EN",
+        _ => "PL"
+    };
+}

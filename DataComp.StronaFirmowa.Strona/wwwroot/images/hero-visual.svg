@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400" height="900" viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+	<title>Laptop HR/Payroll — Komax</title>
+	<desc>Frameless neon laptop angled toward the headline with soft screen glow and HR/Payroll UI cards</desc>
+	<defs>
+		<linearGradient id="brand" x1="0" y1="0" x2="1" y2="1">
+			<stop offset="0" stop-color="#21ccb7"/>
+			<stop offset="1" stop-color="#28D3FF"/>
+		</linearGradient>
+		<linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+			<stop offset="0" stop-color="#0a1647" stop-opacity=".9"/>
+			<stop offset="1" stop-color="#0b1040" stop-opacity=".85"/>
+		</linearGradient>
+		<radialGradient id="glowC" cx="55%" cy="45%" r="70%">
+			<stop offset="0" stop-color="#28D3FF" stop-opacity=".55"/>
+			<stop offset="1" stop-color="#28D3FF" stop-opacity="0"/>
+		</radialGradient>
+		<radialGradient id="glowT" cx="48%" cy="70%" r="65%">
+			<stop offset="0" stop-color="#20C6B7" stop-opacity=".46"/>
+			<stop offset="1" stop-color="#20C6B7" stop-opacity="0"/>
+		</radialGradient>
+		<filter id="blur18" x="-50%" y="-50%" width="200%" height="200%">
+			<feGaussianBlur stdDeviation="18"/>
+		</filter>
+		<filter id="drop" x="-50%" y="-50%" width="200%" height="200%">
+			<feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity=".45"/>
+		</filter>
+		<style>
+			.ui { fill:#E8F6FF; opacity:.92 }
+			.muted { opacity:.65 }
+			.label { fill:#E8F6FF; font:600 18px/1.2 Inter, Segoe UI, Roboto, Arial, sans-serif; letter-spacing:.3px }
+		</style>
+	</defs>
+
+	<!-- Ambient glows only (no frame) -->
+	<ellipse cx="980" cy="320" rx="310" ry="250" fill="url(#glowC)" filter="url(#blur18)"/>
+	<ellipse cx="1020" cy="600" rx="290" ry="210" fill="url(#glowT)" filter="url(#blur18)"/>
+
+	<!-- Data flow lines, subtly blending with page background -->
+	<g stroke="url(#brand)" stroke-width="2.2" fill="none" opacity=".85">
+		<path d="M1270,470 C1160,490 1060,470 960,510 C860,550 740,570 610,555" />
+		<path d="M1270,510 C1165,520 1075,500 965,535 C835,580 710,590 600,575" opacity=".7"/>
+		<path d="M1270,550 C1170,550 1090,535 980,565 C835,605 705,610 595,600" opacity=".55"/>
+	</g>
+
+	<!-- Laptop angled toward the text (left) -->
+	<g transform="translate(780,220) skewX(-10) rotate(-8)" filter="url(#drop)">
+		<!-- Screen (frameless look) -->
+		<rect x="0" y="0" rx="20" ry="20" width="520" height="320" fill="url(#screen)"/>
+		<!-- Inner glow -->
+		<ellipse cx="260" cy="140" rx="260" ry="140" fill="url(#glowC)" filter="url(#blur18)" opacity=".85"/>
+
+		<!-- UI top bar -->
+		<g transform="translate(26,26)">
+			<circle cx="0" cy="0" r="5" fill="url(#brand)"/>
+			<rect x="16" y="-6" width="160" height="12" rx="6" class="ui"/>
+			<rect x="16" y="16" width="340" height="10" rx="5" class="ui muted"/>
+		</g>
+
+		<!-- Three feature cards -->
+		<g transform="translate(38,96)">
+			<!-- Kadry -->
+			<g>
+				<rect x="0" y="0" rx="14" ry="14" width="200" height="106" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"/>
+				<rect x="0" y="0" rx="14" ry="14" width="200" height="106" fill="none" stroke="url(#brand)" opacity=".6"/>
+				<circle cx="20" cy="24" r="5" fill="url(#brand)"/>
+				<text x="40" y="28" class="label">Kadry</text>
+				<rect x="20" y="48" width="152" height="9" rx="5" class="ui"/>
+				<rect x="20" y="66" width="132" height="9" rx="5" class="ui muted"/>
+			</g>
+
+			<!-- Płace -->
+			<g transform="translate(226,18) rotate(2)">
+				<rect x="0" y="0" rx="14" ry="14" width="200" height="106" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"/>
+				<rect x="0" y="0" rx="14" ry="14" width="200" height="106" fill="none" stroke="url(#brand)" opacity=".6"/>
+				<circle cx="20" cy="24" r="5" fill="url(#brand)"/>
+				<text x="40" y="28" class="label">Płace</text>
+				<rect x="20" y="48" width="152" height="9" rx="5" class="ui"/>
+				<rect x="20" y="66" width="110" height="9" rx="5" class="ui muted"/>
+			</g>
+
+			<!-- Czas pracy -->
+			<g transform="translate(110,122) rotate(-4)">
+				<rect x="0" y="0" rx="14" ry="14" width="244" height="116" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.18)"/>
+				<rect x="0" y="0" rx="14" ry="14" width="244" height="116" fill="none" stroke="url(#brand)" opacity=".6"/>
+				<circle cx="20" cy="24" r="5" fill="url(#brand)"/>
+				<text x="40" y="28" class="label">Czas pracy</text>
+				<rect x="20" y="48" width="192" height="9" rx="5" class="ui"/>
+				<rect x="20" y="66" width="170" height="9" rx="5" class="ui muted"/>
+				<rect x="20" y="84" width="128" height="9" rx="5" class="ui muted"/>
+			</g>
+		</g>
+
+		<!-- Base/hinge (minimal, no outer frame) -->
+		<g transform="translate(-36,322)">
+			<rect x="0" y="0" width="592" height="12" rx="6" fill="rgba(255,255,255,.14)" opacity=".55"/>
+			<rect x="8" y="12" width="576" height="40" rx="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.16)"/>
+			<g transform="translate(24,20)" stroke="#E8F6FF" stroke-opacity=".55" stroke-width="2">
+				<path d="M0,0 H528"/>
+				<path d="M0,10 H528" opacity=".8"/>
+				<path d="M0,20 H528" opacity=".6"/>
+			</g>
+		</g>
+	</g>
+</svg>

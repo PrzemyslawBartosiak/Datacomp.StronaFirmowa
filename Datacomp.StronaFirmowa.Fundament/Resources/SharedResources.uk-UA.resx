@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Навігація -->
+  <data name="Nav_Home" xml:space="preserve">
+    <value>Головна</value>
+  </data>
+  <data name="Nav_Support" xml:space="preserve">
+    <value>Підтримка</value>
+  </data>
+	<data name="Nav_About" xml:space="preserve">
+    <value>Про нас</value>
+  </data>
+	<data name="Nav_Contact" xml:space="preserve">
+    <value>Контакт</value>
+  </data>
+	<data name="Nav_Product" xml:space="preserve">
+    <value>Продукт</value>
+  </data>
+	<data name="Nav_ClientZone" xml:space="preserve">
+    <value>Зона клієнта</value>
+  </data>
+	<!-- ... pozostałe tłumaczenia ... -->
+	<data name="Company_Name" xml:space="preserve">
+    <value>Data-Comp</value>
+  </data>
+	<data name="Product_Name" xml:space="preserve">
+    <value>Komax</value>
+  </data>
+	<data name="Product_Version" xml:space="preserve">
+    <value>Komax 2.0</value>
+  </data>
+	<data name="Company_Tagline" xml:space="preserve">
+    <value>Система розрахунку заробітної плати та персоналу</value>
+  </data>
+	<data name="Home_Title" xml:space="preserve">
+    <value>Komax - Система розрахунку заробітної плати та персоналу</value>
+  </data>
+	<data name="Home_Subtitle" xml:space="preserve">
+    <value>Сучасна система розрахунку заробітної плати та персоналу</value>
+  </data>
+	<data name="Home_WhyUs" xml:space="preserve">
+    <value>Чому Komax?</value>
+  </data>
+  
+  <!-- Функції -->
+  <data name="Home_Feature1_Title" xml:space="preserve">
+    <value>Модуль зарплат</value>
+  </data>
+  <data name="Home_Feature1_Desc" xml:space="preserve">
+    <value>Комплексне управління зарплатами та розрахунками</value>
+  </data>
+  <data name="Home_Feature2_Title" xml:space="preserve">
+    <value>Кадровий модуль</value>
+  </data>
+  <data name="Home_Feature2_Desc" xml:space="preserve">
+    <value>Управління документацією працівників</value>
+  </data>
+  <data name="Home_Feature3_Title" xml:space="preserve">
+    <value>Модуль обліку часу</value>
+  </data>
+  <data name="Home_Feature3_Desc" xml:space="preserve">
+    <value>Облік і розрахунок робочого часу</value>
+  </data>
+  
+  <!-- Нижній колонтитул -->
+  <data name="Footer_Copyright" xml:space="preserve">
+    <value>Усі права захищені</value>
+  </data>
+  <data name="Footer_QuickLinks" xml:space="preserve">
+    <value>Швидкі посилання</value>
+  </data>
+  <data name="Footer_Contact" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="Footer_TrustedSolution" xml:space="preserve">
+    <value>Надійне рішення для вашої компанії</value>
+  </data>
+  <data name="Footer_ContactForm" xml:space="preserve">
+    <value>Контактна форма</value>
+  </data>
+</root>

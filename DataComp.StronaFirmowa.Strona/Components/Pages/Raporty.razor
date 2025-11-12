@@ -1,0 +1,131 @@
+﻿@page "/produkt/raporty"
+@using Telerik.SvgIcons
+
+<PageTitle>Raporty i analizy - Komax 2.0</PageTitle>
+
+<div class="wrap">
+    <div class="module-detail-header">
+        <div class="header-icon-wrapper">
+            <TelerikSvgIcon Icon="@SvgIcon.ChartColumnStacked" Size="xl" />
+        </div>
+        <h1 class="display-3">Raporty i analizy</h1>
+        <p class="lead">Kompleksowe zestawienia i inteligentne analizy HR</p>
+    </div>
+
+    <div class="module-detail-content">
+        <section class="feature-showcase">
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileExcel" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Biblioteka gotowych raportów</h3>
+                    <p>Ponad 100 gotowych zestawień kadrowo-płacowych: listy pracowników, struktury zatrudnienia, koszty wynagrodzeń, absencje, urlopy. Szybki dostęp do najważniejszych danych dla HR i zarządu.</p>
+                    <ul class="feature-list">
+                        <li>Raporty kadrowe – zatrudnienie, umowy, wiek, staż</li>
+                        <li>Raporty płacowe – koszty, składki, potrącenia</li>
+                        <li>Raporty czasu pracy – absencje, urlopy, nadgodziny</li>
+                        <li>Eksport do XLSX, CSV, PDF</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.ChartLine" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Interaktywne dashboardy</h3>
+                    <p>Wizualne pulpity dla menedżerów i działu HR z kluczowymi wskaźnikami: headcount, fluktuacja, absencje, koszty FTE. Wykresy, trendy i alerty na żywo.</p>
+                    <ul class="feature-list">
+                        <li>Pulpity dla CEO, CFO, HR Manager</li>
+                        <li>KPI: fluktuacja, absencje, koszty wynagrodzeń</li>
+                        <li>Wykresy trendów i porównań okresowych</li>
+                        <li>Alerty i powiadomienia o anomaliach</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Filter" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Kreator raportów ad-hoc</h3>
+                    <p>Elastyczne narzędzie do budowania własnych zestawień bez programowania. Wybierz kolumny, zastosuj filtry, pogrupuj dane i eksportuj wyniki do Excel lub PDF.</p>
+                    <ul class="feature-list">
+                        <li>Intuicyjny interfejs drag & drop</li>
+                        <li>Filtry zaawansowane i grupowanie danych</li>
+                        <li>Zapisywanie własnych szablonów raportów</li>
+                        <li>Udostępnianie raportów innym użytkownikom</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.ChartPie" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Analityka i prognozy</h3>
+                    <p>Zaawansowane analizy predykcyjne pomagają planować przyszłość. Prognozy kosztów wynagrodzeń, symulacje zmian płacowych, analiza rotacji i rekrutacji.</p>
+                    <ul class="feature-list">
+                        <li>Prognozowanie kosztów wynagrodzeń i etatów</li>
+                        <li>Analiza przyczyn fluktuacji pracowników</li>
+                        <li>Scenariusze "co jeśli" dla zmian struktury</li>
+                        <li>Modele kosztów zatrudnienia i zwolnień</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Korzyści dla Twojej firmy</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Eye" Size="xl" />
+                    <h4>Pełna widoczność</h4>
+                    <p>Zarząd i HR mają dostęp do kluczowych danych w czasie rzeczywistym</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.ChartLine" Size="xl" />
+                    <h4>Lepsze decyzje</h4>
+                    <p>Dane i prognozy wspierają strategiczne decyzje biznesowe</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="xl" />
+                    <h4>Szybkie zestawienia</h4>
+                    <p>Gotowe raporty w kilka sekund – bez czekania na księgowość</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Share" Size="xl" />
+                    <h4>Integracja z BI</h4>
+                    <p>Eksport danych do Power BI, Tableau i innych narzędzi analitycznych</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Podejmuj decyzje w oparciu o dane</h2>
+                <p>Zobacz, jak raporty i analizy Komax 2.0 wspierają zarządzanie HR</p>
+                <div class="cta-buttons">
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                                   ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                                   Class="k-button-lg">
+                        <TelerikSvgIcon Icon="@SvgIcon.LetterSpace" /> Umów prezentację
+                    </TelerikButton>
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                                   ThemeColor="null"
+                                   Class="k-button-lg btn-secondary-cta">
+                        <TelerikSvgIcon Icon="@SvgIcon.ArrowLeft" /> Wróć do produktów
+                    </TelerikButton>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+}

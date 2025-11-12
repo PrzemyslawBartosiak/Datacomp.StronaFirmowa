@@ -1,0 +1,11 @@
+@using Datacomp.StronaFirmowa.Fundament.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
+
+<nav class="nav">
+    <a href="/">@Localizer["Nav_Home"]</a>
+    <a href="/produkt">@Localizer["Nav_Product"]</a>
+    <a href="/o-nas">@Localizer["Nav_About"]</a>
+    <a href="/kontakt">@Localizer["Nav_Contact"]</a>
+    <a href="/strefa-klienta">@Localizer["Nav_ClientZone"]</a>
+</nav>

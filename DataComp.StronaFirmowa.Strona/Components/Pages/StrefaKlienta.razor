@@ -1,0 +1,51 @@
+@page "/strefa-klienta"
+
+<PageTitle>Strefa Klienta</PageTitle>
+
+<div class="container my-5">
+    <div class="text-center mb-5">
+        <h1 class="display-4">Strefa Klienta</h1>
+        <p class="lead text-muted">Wszystko, czego potrzebujesz, w jednym miejscu. Pobierz najnowsze materia³y i aktualizacje.</p>
+    </div>
+
+    <TelerikTileLayout Columns="3" RowHeight="220px" Resizable="true" Reorderable="true">
+        <TileLayoutItems>
+            <TileLayoutItem HeaderText="Instrukcje obs³ugi">
+                <Content>
+                    <div class="tile-content">
+                        <TelerikSvgIcon Icon="@SvgIcon.FilePdf" Size="XLarge" />
+                        <p>Szczegó³owe instrukcje i poradniki do wszystkich modu³ów programu.</p>
+                        <TelerikButton ThemeColor="primary">Przegl¹daj</TelerikButton>
+                    </div>
+                </Content>
+            </TileLayoutItem>
+            <TileLayoutItem HeaderText="Pliki do pobrania">
+                <Content>
+                    <div class="tile-content">
+                        <TelerikSvgIcon Icon="@SvgIcon.Download" Size="XLarge" />
+                        <p>Najnowsza wersja programu, deklaracje podatkowe i inne niezbêdne pliki.</p>
+                        <TelerikButton ThemeColor="primary">Pobierz</TelerikButton>
+                    </div>
+                </Content>
+            </TileLayoutItem>
+            <TileLayoutItem HeaderText="Komunikaty i aktualizacje">
+                <Content>
+                    <div class="tile-content">
+                        <TelerikSvgIcon Icon="@SvgIcon.InfoCircle" Size="XLarge" />
+                        <p>B¹dŸ na bie¿¹co z najnowszymi zmianami w przepisach i aktualizacjami systemu.</p>
+                        <TelerikButton ThemeColor="primary">Czytaj wiêcej</TelerikButton>
+                    </div>
+                </Content>
+            </TileLayoutItem>
+        </TileLayoutItems>
+    </TelerikTileLayout>
+</div>
+
+<style>
+    .tile-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .5rem;
+    }
+</style>

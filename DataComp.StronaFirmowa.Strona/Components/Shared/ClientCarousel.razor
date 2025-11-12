@@ -1,0 +1,50 @@
+@using Datacomp.StronaFirmowa.Fundament.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
+
+<section class="clients-section">
+    <div class="clients-container">
+        <div class="clients-header">
+            <h2 class="clients-title">@Localizer["Clients_TrustedBy"]</h2>
+            <p class="clients-subtitle">@Localizer["Clients_Subtitle"]</p>
+        </div>
+        
+        <div class="clients-carousel">
+            <div class="clients-track">
+                @foreach (var client in Clients)
+                {
+                    <div class="client-logo-wrapper">
+                        <img src="@client.LogoPath" alt="@client.Name" class="client-logo" />
+                    </div>
+                }
+                @* Duplicate for seamless loop *@
+                @foreach (var client in Clients)
+                {
+                    <div class="client-logo-wrapper">
+                        <img src="@client.LogoPath" alt="@client.Name" class="client-logo" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+@code {
+    private sealed class ClientInfo
+    {
+        public string Name { get; set; } = "";
+        public string LogoPath { get; set; } = "";
+    }
+
+    private List<ClientInfo> Clients { get; set; } = new()
+    {
+        new() { Name = "Client 1", LogoPath = "images/clients/client1.png" },
+        new() { Name = "Client 2", LogoPath = "images/clients/client2.png" },
+        new() { Name = "Client 3", LogoPath = "images/clients/client3.png" },
+        new() { Name = "Client 4", LogoPath = "images/clients/client4.png" },
+        new() { Name = "Client 5", LogoPath = "images/clients/client5.png" },
+        new() { Name = "Client 6", LogoPath = "images/clients/client6.png" },
+        new() { Name = "Client 7", LogoPath = "images/clients/client7.png" },
+        new() { Name = "Client 8", LogoPath = "images/clients/client8.png" },
+    };
+}

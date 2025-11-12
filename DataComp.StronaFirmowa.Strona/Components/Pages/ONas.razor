@@ -1,0 +1,209 @@
+﻿@page "/o-nas"
+@using Telerik.SvgIcons
+@using Datacomp.StronaFirmowa.Fundament.Resources
+@using Microsoft.Extensions.Localization
+@inject IStringLocalizer<SharedResources> Localizer
+
+<PageTitle>@Localizer["About_PageTitle"]</PageTitle>
+
+<div class="wrap">
+    <!-- Hero Header -->
+    <div class="about-hero">
+        <div class="about-hero-content">
+            <h1 class="display-3">@Localizer["About_Title"]</h1>
+            <p class="lead">@Localizer["About_Subtitle"]</p>
+        </div>
+        <div class="about-hero-image">
+            <div class="hero-shape"></div>
+        </div>
+    </div>
+
+    <!-- Company Stats -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Calendar" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">@Localizer["About_YearsExperience"]</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.User" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">@Localizer["About_HappyClients"]</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">1000+</div>
+                    <div class="stat-label">@Localizer["About_ProjectsCompleted"]</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Star" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                </div>
+                <div class="stat-content">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">@Localizer["About_Satisfaction"]</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="story-grid">
+            <div class="story-image">
+                <div class="image-placeholder">
+                    <TelerikSvgIcon Icon="@SvgIcon.Image" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                </div>
+            </div>
+            <div class="story-content">
+                <h2>@Localizer["About_OurStory"]</h2>
+                <p>@Localizer["About_StoryText1"]</p>
+                <p>@Localizer["About_StoryText2"]</p>
+                <p>@Localizer["About_StoryText3"]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="mission-vision-section">
+        <div class="mission-vision-grid">
+            <div class="mission-card">
+                <div class="card-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.MapMarkerTarget" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                </div>
+                <h3>@Localizer["About_OurMission"]</h3>
+                <p>@Localizer["About_MissionText"]</p>
+            </div>
+            <div class="vision-card">
+                <div class="card-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Eye" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                </div>
+                <h3>@Localizer["About_OurVision"]</h3>
+                <p>@Localizer["About_VisionText"]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="values-section">
+        <h2 class="section-title">@Localizer["About_OurValues"]</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Highlight" Size="@ThemeConstants.SvgIcon.Size.Large" />
+                </div>
+                <h4>@Localizer["About_Value_Innovation"]</h4>
+                <p>@Localizer["About_Value_InnovationText"]</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.RectangleShape" Size="@ThemeConstants.SvgIcon.Size.Large" />
+                </div>
+                <h4>@Localizer["About_Value_Trust"]</h4>
+                <p>@Localizer["About_Value_TrustText"]</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.HeartOutline" Size="@ThemeConstants.SvgIcon.Size.Large" />
+                </div>
+                <h4>@Localizer["About_Value_Customer"]</h4>
+                <p>@Localizer["About_Value_CustomerText"]</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Gear" Size="@ThemeConstants.SvgIcon.Size.Large" />
+                </div>
+                <h4>@Localizer["About_Value_Excellence"]</h4>
+                <p>@Localizer["About_Value_ExcellenceText"]</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Globe" Size="@ThemeConstants.SvgIcon.Size.Large" />
+                </div>
+                <h4>@Localizer["About_Value_Transparency"]</h4>
+                <p>@Localizer["About_Value_TransparencyText"]</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.ChartLine" Size="@ThemeConstants.SvgIcon.Size.Large" />
+                </div>
+                <h4>@Localizer["About_Value_Growth"]</h4>
+                <p>@Localizer["About_Value_GrowthText"]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <h2 class="section-title">@Localizer["About_OurTeam"]</h2>
+        <p class="section-subtitle">@Localizer["About_TeamSubtitle"]</p>
+        <div class="team-grid">
+            @foreach (var member in TeamMembers)
+            {
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <TelerikSvgIcon Icon="@SvgIcon.User" Size="@ThemeConstants.SvgIcon.Size.ExtraLarge" />
+                    </div>
+                    <h4>@member.Role</h4>
+                    <p>@member.Description</p>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>@Localizer["About_CTA_Title"]</h2>
+            <p>@Localizer["About_CTA_Subtitle"]</p>
+            <div class="cta-buttons">
+                <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                               ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                               Class="k-button-lg">
+                    <TelerikSvgIcon Icon="@SvgIcon.Envelope" /> @Localizer["About_CTA_Contact"]
+                </TelerikButton>
+                <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                               ThemeColor="null"
+                               Class="k-button-lg btn-secondary-cta">
+                    <TelerikSvgIcon Icon="@SvgIcon.ArrowRight" /> @Localizer["About_CTA_Product"]
+                </TelerikButton>
+            </div>
+        </div>
+    </section>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+
+    private sealed class TeamMember
+    {
+        public string Role { get; set; } = "";
+        public string Description { get; set; } = "";
+    }
+
+    private List<TeamMember> TeamMembers { get; set; } = new();
+
+    protected override void OnInitialized()
+    {
+        TeamMembers = new List<TeamMember>
+        {
+            new() { Role = Localizer["About_Team_Developers"], Description = Localizer["About_Team_DevelopersDesc"] },
+            new() { Role = Localizer["About_Team_HR"], Description = Localizer["About_Team_HRDesc"] },
+            new() { Role = Localizer["About_Team_Support"], Description = Localizer["About_Team_SupportDesc"] },
+            new() { Role = Localizer["About_Team_Sales"], Description = Localizer["About_Team_SalesDesc"] }
+        };
+    }
+}

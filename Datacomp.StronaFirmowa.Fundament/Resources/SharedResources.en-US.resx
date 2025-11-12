@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <!-- ===== NAVIGATION ===== -->
+  <data name="Nav_Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="Nav_Product" xml:space="preserve">
+    <value>Product</value>
+  </data>
+  <data name="Nav_About" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Nav_Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Nav_ClientZone" xml:space="preserve">
+    <value>Client Zone</value>
+  </data>
+  <data name="Nav_FAQ" xml:space="preserve">
+    <value>FAQ</value>
+  </data>
+  <data name="Nav_Documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="Nav_Blog" xml:space="preserve">
+    <value>Blog</value>
+  </data>
+
+  <!-- ===== COMPANY & PRODUCT ===== -->
+  <data name="Company_Name" xml:space="preserve">
+    <value>Data-Comp</value>
+  </data>
+  <data name="Product_Name" xml:space="preserve">
+    <value>Komax</value>
+  </data>
+  <data name="Product_Version" xml:space="preserve">
+    <value>Komax 2.0</value>
+  </data>
+  <data name="Company_Tagline" xml:space="preserve">
+    <value>HR and payroll system</value>
+  </data>
+
+  <!-- ===== FOOTER ===== -->
+  <data name="Footer_Copyright" xml:space="preserve">
+    <value>All rights reserved</value>
+  </data>
+  <data name="Footer_QuickLinks" xml:space="preserve">
+    <value>Quick Links</value>
+  </data>
+  <data name="Footer_Resources" xml:space="preserve">
+    <value>Resources</value>
+  </data>
+  <data name="Footer_Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Footer_TrustedSolution" xml:space="preserve">
+    <value>Trusted solution for your business</value>
+  </data>
+  <data name="Footer_CompanyDescription" xml:space="preserve">
+    <value>Comprehensive HR and payroll system supporting HR processes in companies of all sizes.</value>
+  </data>
+  <data name="Footer_Address" xml:space="preserve">
+    <value>Example Street 123, 00-000 Warsaw</value>
+  </data>
+  <data name="Footer_PrivacyPolicy" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Footer_TermsOfService" xml:space="preserve">
+    <value>Terms of Service</value>
+  </data>
+
+  <!-- ===== ABOUT US PAGE ===== -->
+  <data name="About_PageTitle" xml:space="preserve">
+    <value>About Us - Data-Comp</value>
+  </data>
+  <data name="About_Title" xml:space="preserve">
+    <value>Meet Data-Comp</value>
+  </data>
+  <data name="About_Subtitle" xml:space="preserve">
+    <value>Over 20 years of experience in creating innovative HR and payroll solutions</value>
+  </data>
+  <data name="About_YearsExperience" xml:space="preserve">
+    <value>Years of experience</value>
+  </data>
+  <data name="About_HappyClients" xml:space="preserve">
+    <value>Happy clients</value>
+  </data>
+  <data name="About_ProjectsCompleted" xml:space="preserve">
+    <value>Projects completed</value>
+  </data>
+  <data name="About_Satisfaction" xml:space="preserve">
+    <value>Client satisfaction</value>
+  </data>
+  <data name="About_OurStory" xml:space="preserve">
+    <value>Our Story</value>
+  </data>
+  <data name="About_StoryText1" xml:space="preserve">
+    <value>Data-Comp was born from a passion for business process automation. For over two decades, we have been helping companies with digital transformation of human resource management.</value>
+  </data>
+  <data name="About_StoryText2" xml:space="preserve">
+    <value>We started as a small team of programmers and HR specialists who believed that modern technologies could significantly facilitate the work of HR departments in Poland.</value>
+  </data>
+  <data name="About_StoryText3" xml:space="preserve">
+    <value>Today we are one of the leading providers of HR and payroll software, serving over 500 companies from various industries. Our strength is continuous development and adaptation of products to changing regulations and market needs.</value>
+  </data>
+  <data name="About_OurMission" xml:space="preserve">
+    <value>Our Mission</value>
+  </data>
+  <data name="About_MissionText" xml:space="preserve">
+    <value>We facilitate HR and payroll management by providing intuitive, modern and reliable IT tools. We believe that technology should be a support, not an obstacle in everyday work.</value>
+  </data>
+  <data name="About_OurVision" xml:space="preserve">
+    <value>Our Vision</value>
+  </data>
+  <data name="About_VisionText" xml:space="preserve">
+    <value>To be the first choice for companies looking for comprehensive HR solutions. We want Komax 2.0 to become the industry standard, setting the direction for modern human resource management development.</value>
+  </data>
+  <data name="About_OurValues" xml:space="preserve">
+    <value>Our Values</value>
+  </data>
+  <data name="About_Value_Innovation" xml:space="preserve">
+    <value>Innovation</value>
+  </data>
+  <data name="About_Value_InnovationText" xml:space="preserve">
+    <value>We constantly develop our products, following the latest technological trends and market needs.</value>
+  </data>
+  <data name="About_Value_Trust" xml:space="preserve">
+    <value>Trust</value>
+  </data>
+  <data name="About_Value_TrustText" xml:space="preserve">
+    <value>We build long-term relationships based on reliability, transparency and professionalism.</value>
+  </data>
+  <data name="About_Value_Customer" xml:space="preserve">
+    <value>Customer First</value>
+  </data>
+  <data name="About_Value_CustomerText" xml:space="preserve">
+    <value>Every feature is created with the real needs of our users in mind.</value>
+  </data>
+  <data name="About_Value_Excellence" xml:space="preserve">
+    <value>Excellence</value>
+  </data>
+  <data name="About_Value_ExcellenceText" xml:space="preserve">
+    <value>We focus on the highest quality of code, documentation and customer service.</value>
+  </data>
+  <data name="About_Value_Transparency" xml:space="preserve">
+    <value>Transparency</value>
+  </data>
+  <data name="About_Value_TransparencyText" xml:space="preserve">
+    <value>Clear rules of cooperation, transparent pricing and open communication with clients.</value>
+  </data>
+  <data name="About_Value_Growth" xml:space="preserve">
+    <value>Growth</value>
+  </data>
+  <data name="About_Value_GrowthText" xml:space="preserve">
+    <value>We invest in team and technology development to always be one step ahead of the competition.</value>
+  </data>
+  <data name="About_OurTeam" xml:space="preserve">
+    <value>Our Team</value>
+  </data>
+  <data name="About_TeamSubtitle" xml:space="preserve">
+    <value>A group of enthusiasts with many years of experience in IT and HR</value>
+  </data>
+  <data name="About_Team_Developers" xml:space="preserve">
+    <value>Development Team</value>
+  </data>
+  <data name="About_Team_DevelopersDesc" xml:space="preserve">
+    <value>Experienced programmers creating stable and scalable solutions</value>
+  </data>
+  <data name="About_Team_HR" xml:space="preserve">
+    <value>HR Specialists</value>
+  </data>
+  <data name="About_Team_HRDesc" xml:space="preserve">
+    <value>Experts in labor law and HR and payroll processes</value>
+  </data>
+  <data name="About_Team_Support" xml:space="preserve">
+    <value>Technical Support</value>
+  </data>
+  <data name="About_Team_SupportDesc" xml:space="preserve">
+    <value>Team ready to help in any situation, 5 days a week</value>
+  </data>
+  <data name="About_Team_Sales" xml:space="preserve">
+    <value>Business Advisors</value>
+  </data>
+  <data name="About_Team_SalesDesc" xml:space="preserve">
+    <value>We help you choose the best solution for your company</value>
+  </data>
+  <data name="About_CTA_Title" xml:space="preserve">
+    <value>Join our satisfied clients</value>
+  </data>
+  <data name="About_CTA_Subtitle" xml:space="preserve">
+    <value>Contact us and find out how we can support your company's growth</value>
+  </data>
+  <data name="About_CTA_Contact" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="About_CTA_Product" xml:space="preserve">
+    <value>See Product</value>
+  </data>
+
+  <!-- ===== CLIENT CAROUSEL ===== -->
+  <data name="Clients_TrustedBy" xml:space="preserve">
+    <value>Trusted by</value>
+  </data>
+  <data name="Clients_Subtitle" xml:space="preserve">
+    <value>We support organizations of all sizes in digital transformation of HR and payroll processes</value>
+  </data>
+</root>

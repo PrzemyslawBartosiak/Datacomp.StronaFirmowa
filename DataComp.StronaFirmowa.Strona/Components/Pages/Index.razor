@@ -1,0 +1,113 @@
+﻿@page "/"
+@using Telerik.SvgIcons
+
+<PageTitle>Komax 2.0 - Nowoczesny system kadrowo-płacowy</PageTitle>
+
+<section class="hero-split">
+    <div class="hero-container">
+        <!-- Lewa strona - Treść -->
+        <div class="hero-content">
+            <span class="hero-badge">Komax 2.0</span>
+
+            <h1 class="hero-title">
+                Kadry. Płace. Czas pracy.<br />
+                <span class="highlight">Wszystko pod kontrolą.</span>
+            </h1>
+
+            <p class="hero-description">
+                Komax automatyzuje rozliczenia wynagrodzeń, rozlicza czas pracy,
+                pilnuje urlopów i dokumentów — zawsze zgodnie z aktualnymi przepisami.
+            </p>
+
+            <div class="hero-features">
+                <div class="feature-badge">
+                    <TelerikSvgIcon Icon="@SvgIcon.DevicesSolid" />
+                    <span>Responsive design</span>
+                </div>
+                <div class="feature-badge">
+                    <TelerikSvgIcon Icon="@SvgIcon.Cloud" />
+                    <span>100% w chmurze</span>
+                </div>
+                <div class="feature-badge">
+                    <TelerikSvgIcon Icon="@SvgIcon.Lock" />
+                    <span>Bezpieczny RODO</span>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                               ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                               Size="@ThemeConstants.Button.Size.Large"
+                               Class="btn-primary-hero">
+                    <TelerikSvgIcon Icon="@SvgIcon.Calendar" /> Umów prezentację
+                </TelerikButton>
+                <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                               FillMode="@ThemeConstants.Button.FillMode.Outline"
+                               Size="@ThemeConstants.Button.Size.Large"
+                               Class="btn-secondary-hero">
+                    <TelerikSvgIcon Icon="@SvgIcon.ArrowRight" /> Poznaj produkt
+                </TelerikButton>
+            </div>
+
+            <div class="trust-indicator">
+                <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" Class="trust-icon" />
+                <div class="trust-text">
+                    <strong>Zgodność z prawem pracy</strong>
+                    <span>i pełne bezpieczeństwo danych</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Prawa strona - Mockup -->
+        <div class="hero-visual">
+            <div class="mockup-wrapper">
+                <img src="/images/AdobeStock_565062689.jpeg"
+                     alt="Komax 2.0 - Dostępny na każdym urządzeniu"
+                     class="mockup-image"
+                     loading="eager" />
+
+                <!-- Floating card z statystykami -->
+                <div class="floating-card">
+                    <div class="card-content">
+                        <div class="stat-group">
+                            <TelerikSvgIcon Icon="@SvgIcon.User" Class="stat-icon" />
+                            <div>
+                                <strong>500+</strong>
+                                <span>Firm korzysta</span>
+                            </div>
+                        </div>
+                        <div class="stat-group">
+                            <TelerikSvgIcon Icon="@SvgIcon.Star" Class="stat-icon" />
+                            <div>
+                                <strong>4.9/5</strong>
+                                <span>Ocena klientów</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating badge -->
+                <div class="floating-badge">
+                    <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" />
+                    <span>99.9% uptime</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sekcja z produktami/funkcjami -->
+<div class="wrap">
+    <section class="features-section">
+        <div class="section-header">
+            <h2>Kompleksowe rozwiązanie dla Twojej firmy</h2>
+            <p class="section-lead">Wszystko czego potrzebujesz w jednym systemie</p>
+        </div>
+
+        <!-- Tu możesz dodać kafelki z modułami (Kadry, Płace, etc.) -->
+    </section>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = default!;
+}

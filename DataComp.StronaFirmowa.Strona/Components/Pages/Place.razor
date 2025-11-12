@@ -1,0 +1,115 @@
+﻿@page "/produkt/place"
+@using Telerik.SvgIcons
+
+<PageTitle>Płace - Komax 2.0</PageTitle>
+
+<div class="wrap">
+    <div class="module-detail-header">
+        <div class="header-icon-wrapper">
+            <TelerikSvgIcon Icon="@SvgIcon.Dollar" Size="xl" />
+        </div>
+        <h1 class="display-3">Płace</h1>
+        <p class="lead">Profesjonalne naliczanie wynagrodzeń i pełna obsługa płacowa</p>
+    </div>
+
+    <div class="module-detail-content">
+        <section class="feature-showcase">
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Calculator" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Automatyczne naliczanie wynagrodzeń</h3>
+                    <p>Precyzyjne obliczenia wynagrodzeń zasadniczych, premii, bonusów i dodatków. System automatycznie uwzględnia stawki godzinowe, nadgodziny, pracę w dni wolne i wszystkie składniki wynagrodzenia.</p>
+                    <ul class="feature-list">
+                        <li>Elastyczne wzory płacowe i składniki zmienne</li>
+                        <li>Automatyczne przeliczanie nadgodzin</li>
+                        <li>Obsługa premii i bonusów grupowych</li>
+                        <li>Potrącenia, zajęcia komornicze i zaliczki</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileExcel" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Deklaracje i rozliczenia ZUS/US</h3>
+                    <p>Automatyczne generowanie deklaracji ZUS (DRA, RCA, RSA), raportów US (PIT-11, PIT-4R) oraz przelewów do banków. Wszystkie formularze zgodne z obowiązującymi przepisami.</p>
+                    <ul class="feature-list">
+                        <li>Eksport deklaracji do programu Płatnik</li>
+                        <li>Automatyczne obliczanie składek i podatków</li>
+                        <li>Generowanie PIT-11, PIT-4R, PIT-8AR</li>
+                        <li>Pliki przelewów w formatach bankowych</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileConfig" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Listy płac i paski wynagrodzenia</h3>
+                    <p>Szybkie generowanie list płac, pasków wynagrodzenia i zestawień zbiorczych. Możliwość personalizacji szablonów i wysyłki elektronicznej do pracowników przez Portal.</p>
+                    <ul class="feature-list">
+                        <li>Konfigurowalne szablony list i pasków</li>
+                        <li>Elektroniczna dystrybucja przez Portal</li>
+                        <li>Archiwum płac z pełną historią</li>
+                        <li>Zestawienia kosztów dla księgowości</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Korzyści dla Twojej firmy</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" Size="lg" />
+                    <h4>Bezbłędne naliczenia</h4>
+                    <p>Wbudowana walidacja i kontrola błędów eliminuje pomyłki w rozliczeniach</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="lg" />
+                    <h4>Szybkość rozliczeń</h4>
+                    <p>Pełne naliczenie płac dla całej firmy w kilka minut</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileExcel" Size="lg" />
+                    <h4>Zgodność z przepisami</h4>
+                    <p>Automatyczne aktualizacje tabel ZUS, kwot wolnych i stawek podatkowych</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Share" Size="lg" />
+                    <h4>Integracja z księgowością</h4>
+                    <p>Bezproblemowy eksport danych do systemów finansowo-księgowych</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Zautomatyzuj rozliczenia płacowe</h2>
+                <p>Zobacz, jak Komax 2.0 usprawni procesy płacowe w Twojej firmie</p>
+                <div class="cta-buttons">
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                                   ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                                   Class="k-button-lg">
+                        <TelerikSvgIcon Icon="@SvgIcon.LetterSpace" /> Umów prezentację
+                    </TelerikButton>
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                                   ThemeColor="null"
+                                   Class="k-button-lg btn-secondary-cta">
+                        <TelerikSvgIcon Icon="@SvgIcon.ArrowLeft" /> Wróć do produktów
+                    </TelerikButton>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+}

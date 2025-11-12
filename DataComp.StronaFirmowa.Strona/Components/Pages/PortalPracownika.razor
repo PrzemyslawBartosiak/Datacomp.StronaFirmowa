@@ -1,0 +1,115 @@
+﻿@page "/produkt/portal-pracownika"
+@using Telerik.SvgIcons
+
+<PageTitle>Portal pracownika - Komax 2.0</PageTitle>
+
+<div class="wrap">
+    <div class="module-detail-header">
+        <div class="header-icon-wrapper">
+            <TelerikSvgIcon Icon="@SvgIcon.Globe" Size="xl" />
+        </div>
+        <h1 class="display-3">Portal pracownika</h1>
+        <p class="lead">Samoobsługa pracownicza dostępna 24/7 z każdego urządzenia</p>
+    </div>
+
+    <div class="module-detail-content">
+        <section class="feature-showcase">
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.User" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Profil pracownika i dane osobowe</h3>
+                    <p>Każdy pracownik ma dostęp do swoich danych kadrowych: adres, kontakt, kwalifikacje, szkolenia. Możliwość zgłaszania zmian danych osobowych z elektroniczną akceptacją działu HR.</p>
+                    <ul class="feature-list">
+                        <li>Bezpieczny dostęp z logowaniem dwuskładnikowym</li>
+                        <li>Aktualizacja danych kontaktowych i bankowych</li>
+                        <li>Dostęp do umów, aneksów i dokumentów</li>
+                        <li>Historia zatrudnienia i stanowisk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileExcel" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Paski płacowe i rozliczenia</h3>
+                    <p>Elektroniczne paski wynagrodzenia zawsze pod ręką. Przeglądanie historii wynagrodzeń, premii i potrąceń. Eksport do PDF i archiwum płac z możliwością ponownego pobrania.</p>
+                    <ul class="feature-list">
+                        <li>Automatyczne powiadomienia o nowych paskach</li>
+                        <li>Historia wynagrodzeń i zestawienia roczne</li>
+                        <li>PIT-11 i inne dokumenty podatkowe online</li>
+                        <li>Szczegółowe rozliczenie składników płacy</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Inbox" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Wnioski i akceptacje online</h3>
+                    <p>Składanie wniosków urlopowych, delegacji, zwolnień i innych dokumentów bez papierowej biurokracji. Elektroniczny obieg akceptacji z powiadomieniami dla przełożonych i HR.</p>
+                    <ul class="feature-list">
+                        <li>Wnioski urlopowe z podglądem limitów</li>
+                        <li>Zgłaszanie delegacji i rozliczanie kosztów</li>
+                        <li>Workflow akceptacji wielopoziomowej</li>
+                        <li>Status wniosków w czasie rzeczywistym</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Korzyści dla Twojej firmy</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="xl" />
+                    <h4>Oszczędność czasu HR</h4>
+                    <p>Mniej rutynowych pytań i zadań – pracownicy obsługują się sami</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.DevicesSolid" Size="xl" />
+                    <h4>Dostępność 24/7</h4>
+                    <p>Portal działa na PC, tablecie i smartfonie – wszędzie i zawsze</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Star" Size="xl" />
+                    <h4>Większa satysfakcja</h4>
+                    <p>Pracownicy doceniają wygodę i szybkość samoobsługi</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Lock" Size="xl" />
+                    <h4>Bezpieczeństwo RODO</h4>
+                    <p>Pełna kontrola dostępu i audyt logowań zgodnie z przepisami</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Daj pracownikom narzędzie do samoobsługi</h2>
+                <p>Zobacz, jak Portal pracownika zmniejszy obciążenie działu HR</p>
+                <div class="cta-buttons">
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                                   ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                                   Class="k-button-lg">
+                        <TelerikSvgIcon Icon="@SvgIcon.PaperPlane" /> Umów prezentację
+                    </TelerikButton>
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                                   ThemeColor="null"
+                                   Class="k-button-lg btn-secondary-cta">
+                        <TelerikSvgIcon Icon="@SvgIcon.ArrowLeft" /> Wróć do produktów
+                    </TelerikButton>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+}

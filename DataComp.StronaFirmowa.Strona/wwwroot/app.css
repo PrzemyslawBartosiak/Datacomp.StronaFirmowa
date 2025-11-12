@@ -1,0 +1,388 @@
+/* ===== CSS CUSTOM PROPERTIES - KOMAX MOODBOARD ===== */
+:root {
+    /* ===== MOODBOARD COLORS ===== */
+    /* Neon Accents */
+    --neon-green: #1EF6A3;
+    --turquoise-blue: #00C9FF;
+    --electric-blue: #007BFF;
+    /* Deep Backgrounds */
+    --deep-indigo: #0A0E3F;
+    --midnight-navy: #070B2D;
+    --royal-purple: #6528E0;
+    --magenta-glow: #B624FF;
+    /* Surface & Glass */
+    --soft-white: #F5F8FA;
+    --surface-glass: rgba(10, 14, 63, 0.7);
+    --surface-glass-hover: rgba(15, 20, 80, 0.85);
+    /* Text Colors */
+    --text-primary: #F5F8FA;
+    --text-secondary: #D5E1F5;
+    --text-muted: #A8B9D3;
+    /* ===== GRADIENTS ===== */
+    --gradient-main: linear-gradient(135deg, #0A0E3F 0%, #6528E0 40%, #00C9FF 80%);
+    --gradient-accent: linear-gradient(90deg, #1EF6A3 0%, #00C9FF 100%);
+    --gradient-purple-cyan: linear-gradient(135deg, #6528E0 0%, #00C9FF 100%);
+    --gradient-glow: linear-gradient(135deg, #1EF6A3 0%, #B624FF 100%);
+    /* ===== GLOW EFFECTS ===== */
+    --glow-green: 0 0 20px rgba(30, 246, 163, 0.8);
+    --glow-cyan: 0 0 20px rgba(0, 201, 255, 0.8);
+    --glow-purple: 0 0 20px rgba(101, 40, 224, 0.8);
+    --glow-magenta: 0 0 20px rgba(182, 36, 255, 0.8);
+    --glow-mixed: 0 0 30px rgba(30, 246, 163, 0.6), 0 0 60px rgba(101, 40, 224, 0.4);
+    /* ===== SPACING & SIZING ===== */
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --border-radius-xl: 24px;
+    --border-radius-full: 9999px;
+    /* ===== TRANSITIONS ===== */
+    --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== GLOBAL RESETS ===== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text-primary);
+    background: var(--gradient-main);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== LAYOUT ===== */
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    padding-top: 0; /* ZMIENIONE: usuniête padding-top ¿eby usun¹æ pas */
+}
+
+/* ===== CONTAINER & WRAPPER ===== */
+.wrap {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    .wrap {
+        padding: 0 1rem;
+    }
+}
+
+/* ===== TYPOGRAPHY ===== */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-top: 0;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    text-shadow: var(--glow-mixed);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    text-shadow: var(--glow-cyan);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* ===== UTILITY CLASSES ===== */
+.text-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(var(--glow-green));
+}
+
+.text-neon {
+    color: var(--neon-green);
+    text-shadow: var(--glow-green);
+}
+
+.text-cyan {
+    color: var(--turquoise-blue);
+    text-shadow: var(--glow-cyan);
+}
+
+.text-purple {
+    color: var(--royal-purple);
+    text-shadow: var(--glow-purple);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* ===== GLASS MORPHISM CARD ===== */
+.glass-card {
+    background: var(--surface-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 2px solid rgba(30, 246, 163, 0.3);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 40px rgba(30, 246, 163, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+}
+
+    .glass-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 30% 20%, rgba(30, 246, 163, 0.1), transparent 60%), radial-gradient(circle at 70% 80%, rgba(101, 40, 224, 0.1), transparent 60%);
+        pointer-events: none;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5), 0 0 60px rgba(30, 246, 163, 0.4), 0 0 80px rgba(101, 40, 224, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        border-color: rgba(30, 246, 163, 0.5);
+    }
+
+/* ===== BUTTONS BASE STYLES ===== */
+.btn-neon {
+    background: var(--gradient-accent);
+    border: none;
+    border-radius: var(--border-radius-md);
+    color: var(--deep-indigo);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    box-shadow: var(--glow-green);
+    position: relative;
+    overflow: hidden;
+}
+
+    .btn-neon::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        transform: translateX(-100%);
+        transition: transform 0.6s ease;
+    }
+
+    .btn-neon:hover {
+        transform: translateY(-2px);
+        box-shadow: var(--glow-green), 0 8px 24px rgba(30, 246, 163, 0.5);
+    }
+
+        .btn-neon:hover::before {
+            transform: translateX(100%);
+        }
+
+    .btn-neon:active {
+        transform: translateY(0);
+    }
+
+/* ===== SCROLLBAR STYLING ===== */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--deep-indigo);
+    border-radius: var(--border-radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-accent);
+    border-radius: var(--border-radius-sm);
+    border: 2px solid var(--deep-indigo);
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--gradient-purple-cyan);
+        box-shadow: var(--glow-cyan);
+    }
+
+/* ===== SELECTION STYLING ===== */
+::selection {
+    background: rgba(30, 246, 163, 0.3);
+    color: var(--soft-white);
+}
+
+::-moz-selection {
+    background: rgba(30, 246, 163, 0.3);
+    color: var(--soft-white);
+}
+
+/* ===== FOCUS VISIBLE ===== */
+:focus-visible {
+    outline: 2px solid var(--neon-green);
+    outline-offset: 2px;
+    border-radius: var(--border-radius-sm);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+@keyframes glow-pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(30, 246, 163, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(30, 246, 163, 0.8);
+    }
+}
+
+/* ===== BLAZOR ERROR UI ===== */
+#blazor-error-ui {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    color: white;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: none;
+    box-shadow: 0 -4px 20px rgba(220, 38, 38, 0.5);
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+    #blazor-error-ui.show {
+        display: block;
+    }
+
+    #blazor-error-ui .reload,
+    #blazor-error-ui .dismiss {
+        color: white;
+        text-decoration: underline;
+        margin-left: 1rem;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+        #blazor-error-ui .reload:hover,
+        #blazor-error-ui .dismiss:hover {
+            text-decoration: none;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        }
+
+/* ===== RESPONSIVE HELPERS ===== */
+@media (max-width: 1200px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
+    }
+
+    main {
+        padding-top: 0; /* Utrzymane na 0 dla mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    main {
+        padding-top: 0; /* Utrzymane na 0 dla mobile */
+    }
+}
+@media (max-width: 576px) {
+    html {
+        font-size: 13px;
+    }
+}

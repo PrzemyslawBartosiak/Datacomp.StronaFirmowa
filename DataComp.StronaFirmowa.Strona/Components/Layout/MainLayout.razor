@@ -1,0 +1,42 @@
+﻿@inherits LayoutComponentBase
+@inject IJSRuntime JS
+
+<TelerikRootComponent>
+    <div class="page">
+        <Header />
+
+        <main>
+            @Body
+        </main>
+
+        <ClientCarousel />
+        <Footer />
+    </div>
+</TelerikRootComponent>
+
+@code {
+    private IJSObjectReference? _site;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        try
+        {
+            _site = await JS.InvokeAsync<IJSObjectReference>("import", "/js/site.js");
+            await _site.InvokeVoidAsync("clearSelection");
+        }
+        catch
+        {
+            // Swallow to avoid the global error UI if JS isn't ready yet
+        }
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        if (_site is not null)
+        {
+            try { await _site.DisposeAsync(); } catch { }
+        }
+    }
+}

@@ -1,0 +1,131 @@
+﻿@page "/produkt/integracje"
+@using Telerik.SvgIcons
+
+<PageTitle>Integracje - Komax 2.0</PageTitle>
+
+<div class="wrap">
+    <div class="module-detail-header">
+        <div class="header-icon-wrapper">
+            <TelerikSvgIcon Icon="@SvgIcon.Connector" Size="xl" />
+        </div>
+        <h1 class="display-3">Integracje</h1>
+        <p class="lead">Bezproblemowa wymiana danych z systemami zewnętrznymi</p>
+    </div>
+
+    <div class="module-detail-content">
+        <section class="feature-showcase">
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileExcel" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Płatnik, ZUS i urzędy</h3>
+                    <p>Eksport deklaracji bezpośrednio do programu Płatnik, eDeklaracje, ePUAP. Automatyczne generowanie dokumentów ZUS (DRA, RCA, RSA) i US (PIT-11, PIT-4R) w zgodnych formatach XML.</p>
+                    <ul class="feature-list">
+                        <li>Płatnik – eksport deklaracji ZUS (DRA, RCA, RSA, ZUS ZWUA)</li>
+                        <li>PUE ZUS – import e-ZLA i raportów korekt</li>
+                        <li>eDeklaracje – formularze US w formacie XML</li>
+                        <li>ePUAP – podpis kwalifikowany i wysyłka elektroniczna</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Share" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Systemy ERP i finanse</h3>
+                    <p>Integracja z popularnymi systemami finansowo-księgowymi: SAP, Microsoft Dynamics, Comarch ERP, Symfonia, Optima. Automatyczny transfer kosztów wynagrodzeń do księgowości.</p>
+                    <ul class="feature-list">
+                        <li>Eksport dekretów księgowych i rozliczeń MPK</li>
+                        <li>Import danych o kosztach projektów i zleceniach</li>
+                        <li>Synchronizacja struktur organizacyjnych</li>
+                        <li>API REST dla integracji custom</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Systemy czasu pracy (T&A)</h3>
+                    <p>Pobieranie danych z czytników kart, terminali RCP, aplikacji mobilnych. Obsługa najpopularniejszych systemów: Comarch Optima RCP, ATMS, Tensor, ZKTeco i innych.</p>
+                    <ul class="feature-list">
+                        <li>Import rejestracji z czytników i terminali</li>
+                        <li>Integracja z kontrolą dostępu (KD)</li>
+                        <li>Automatyczne rozliczanie wejść/wyjść</li>
+                        <li>Obsługa CSV, TXT, XML i formatów dedykowanych</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Code" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>API REST i integracje niestandardowe</h3>
+                    <p>Nowoczesne REST API umożliwia budowanie własnych integracji. Pełna dokumentacja, przykłady kodu i wsparcie techniczne dla deweloperów.</p>
+                    <ul class="feature-list">
+                        <li>REST API z autoryzacją OAuth 2.0</li>
+                        <li>Webhooks i powiadomienia o zdarzeniach</li>
+                        <li>Dokumentacja OpenAPI (Swagger)</li>
+                        <li>SDK dla .NET, Python, JavaScript</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Korzyści dla Twojej firmy</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Share" Size="xl" />
+                    <h4>Jeden ekosystem</h4>
+                    <p>Wszystkie systemy pracują razem – bez ręcznego przepisywania danych</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" Size="xl" />
+                    <h4>Mniej błędów</h4>
+                    <p>Automatyczna wymiana danych eliminuje pomyłki i duplikaty</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="xl" />
+                    <h4>Oszczędność czasu</h4>
+                    <p>Automatyzacja procesów to godziny zaoszczędzone dla zespołu</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Code" Size="xl" />
+                    <h4>Gotowa na przyszłość</h4>
+                    <p>Nowoczesne API pozwala na łatwe rozbudowanie funkcjonalności</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Połącz systemy w jedną całość</h2>
+                <p>Dowiedz się, jak Komax 2.0 zintegruje się z Twoim środowiskiem IT</p>
+                <div class="cta-buttons">
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                                   ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                                   Class="k-button-lg">
+                        <TelerikSvgIcon Icon="@SvgIcon.PaperPlane" /> Umów prezentację
+                    </TelerikButton>
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                                   ThemeColor="null"
+                                   Class="k-button-lg btn-secondary-cta">
+                        <TelerikSvgIcon Icon="@SvgIcon.ArrowLeft" /> Wróć do produktów
+                    </TelerikButton>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+}

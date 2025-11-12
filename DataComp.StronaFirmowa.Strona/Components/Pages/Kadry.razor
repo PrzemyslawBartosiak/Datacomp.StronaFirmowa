@@ -1,0 +1,116 @@
+@page "/produkt/kadry"
+@using Telerik.SvgIcons
+@using Telerik.Blazor
+
+<PageTitle>Kadry - Komax 2.0</PageTitle>
+
+<div class="wrap">
+    <div class="module-detail-header">
+        <div class="header-icon-wrapper">
+            <TelerikSvgIcon Icon="@SvgIcon.User" Size="x1" />
+        </div>
+        <h1 class="display-3">Kadry</h1>
+        <p class="lead">Kompleksowe zarz¹dzanie zasobami ludzkimi w Twojej firmie</p>
+    </div>
+
+    <div class="module-detail-content">
+        <section class="feature-showcase">
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileAdd" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Elektroniczne akta osobowe</h3>
+                    <p>Pe³na digitalizacja dokumentacji pracowniczej. Wszystkie umowy, aneksy, œwiadectwa i zaœwiadczenia w jednym, bezpiecznym miejscu z wyszukiwark¹ i automatycznym archiwizowaniem.</p>
+                    <ul class="feature-list">
+                        <li>Skanowanie i OCR dokumentów</li>
+                        <li>Automatyczne kategoryzowanie</li>
+                        <li>Historia zmian i wersjonowanie</li>
+                        <li>Podpis elektroniczny i kwalifikowany</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item showcase-reverse">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.FileConfig" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Obs³uga umów i kontraktów</h3>
+                    <p>Zarz¹dzanie wszystkimi typami umów: o pracê, zlecenia, dzie³a, kontrakty B2B. System automatycznie przypomina o koñcu okresu próbnego, wygaœniêciu umów i koniecznoœci przed³u¿enia badañ.</p>
+                    <ul class="feature-list">
+                        <li>Szablony umów zgodne z przepisami</li>
+                        <li>Automatyczne generowanie aneksów</li>
+                        <li>Kalendarz terminów i przypomnieñ</li>
+                        <li>Integracja z modu³em P³ace</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="showcase-item">
+                <div class="showcase-icon">
+                    <TelerikSvgIcon Icon="@SvgIcon.Bell" Size="xl" />
+                </div>
+                <div class="showcase-text">
+                    <h3>Automatyczne przypomnienia</h3>
+                    <p>Nigdy nie przegap wa¿nych terminów. System automatycznie przypomina o badaniach okresowych, szkoleniach BHP, terminach p³atnoœci sk³adek i innych kluczowych datach.</p>
+                    <ul class="feature-list">
+                        <li>Konfigurowalne powiadomienia email i SMS</li>
+                        <li>Eskalacja dla zaleg³ych zadañ</li>
+                        <li>Dashboard terminów dla dzia³u HR</li>
+                        <li>Raporty compliance i audyt</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits-section">
+            <h2>Korzyœci dla Twojej firmy</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="xl" />
+                    <h4>Oszczêdnoœæ czasu</h4>
+                    <p>Do 70% mniej czasu poœwiêconego na rutynowe zadania administracyjne</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" Size="xl" />
+                    <h4>Zgodnoœæ z przepisami</h4>
+                    <p>Automatyczne aktualizacje zgodnie z najnowszymi zmianami w Kodeksie pracy</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.Lock" Size="xl" />
+                    <h4>Bezpieczeñstwo danych</h4>
+                    <p>Szyfrowanie, backup, kontrola dostêpu i pe³na zgodnoœæ z RODO</p>
+                </div>
+                <div class="benefit-card">
+                    <TelerikSvgIcon Icon="@SvgIcon.ChartLine" Size="xl" />
+                    <h4>Raportowanie</h4>
+                    <p>Gotowe raporty i analizy struktury zatrudnienia, fluktuacji i kosztów</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-content">
+                <h2>Gotowy na zmianê?</h2>
+                <p>Umów siê na bezp³atn¹ prezentacjê i zobacz modu³ Kadry w dzia³aniu</p>
+                <div class="cta-buttons">
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/kontakt"))"
+                                   ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                                   Class="k-button-lg">
+                        <TelerikSvgIcon Icon="@SvgIcon.PaperPlane" /> Skontaktuj siê z nami
+                    </TelerikButton>
+                    <TelerikButton OnClick="@(() => Navigation.NavigateTo("/produkt"))"
+                                   ThemeColor="null"
+                                   Class="k-button-lg btn-secondary-cta">
+                        <TelerikSvgIcon Icon="@SvgIcon.ArrowLeft" /> Wróæ do produktów
+                    </TelerikButton>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+}

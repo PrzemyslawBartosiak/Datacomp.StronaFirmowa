@@ -1,0 +1,43 @@
+﻿@page "/kontakt"
+@using System.ComponentModel.DataAnnotations
+<PageTitle>Kontakt</PageTitle>
+
+<div class="wrap">
+    <h1>Kontakt</h1>
+
+    <TelerikForm Model="@_model" OnValidSubmit="@HandleSubmit">
+        <FormItems>
+            <FormItem Field="@nameof(ContactForm.Name)" LabelText="Imię i nazwisko" />
+            <FormItem Field="@nameof(ContactForm.Email)" LabelText="E-mail" />
+            <FormItem Field="@nameof(ContactForm.Message)" LabelText="Wiadomość" EditorType="FormEditorType.TextArea" />
+        </FormItems>
+        <FormValidation>
+            <DataAnnotationsValidator />
+        </FormValidation>
+        <FormButtons>
+            <TelerikButton ThemeColor="Primary" Class="k-button-lg">Wyślij</TelerikButton>
+        </FormButtons>
+    </TelerikForm>
+</div>
+
+@code {
+    private readonly ContactForm _model = new();
+
+    private Task HandleSubmit()
+    {
+        // TODO: zapis do bazy / wysyłka maila
+        return Task.CompletedTask;
+    }
+
+    public sealed class ContactForm
+    {
+        [Required, StringLength(120)]
+        public string Name { get; set; } = string.Empty;
+
+        [Required, EmailAddress]
+        public string Email { get; set; } = string.Empty;
+
+        [Required, StringLength(4000)]
+        public string Message { get; set; } = string.Empty;
+    }
+}

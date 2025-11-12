@@ -1,0 +1,295 @@
+﻿@page "/produkt"
+@using Telerik.Blazor.Components
+@using Telerik.SvgIcons
+
+<PageTitle>Produkt</PageTitle>
+
+<div class="wrap">
+    <div class="product-header">
+        <h1 class="display-4 product-title" style="color: var(--cyan);">Komax 2.0</h1>
+        <p class="lead product-subtitle" style="color: var(--ink);">Modułowy system kadrowo‑płacowy dopasowany do Twojej organizacji.</p>
+    </div>
+
+    <TelerikTileLayout Columns="3"
+                       ColumnWidth="1fr"
+                       RowHeight="220px"
+                       Resizable="false"
+                       Reorderable="false"
+                       Class="product-tiles">
+        <TileLayoutItems>
+            <TileLayoutItem>
+                <Content>
+                    <button type="button" class="tile glass tile-link" @onclick="@(() => OpenModule(Module.Kadry))" aria-label="Kadry">
+                        <div class="tile-icon-wrapper">
+                            <TelerikSvgIcon Icon="@SvgIcon.User" Size="xl" />
+                        </div>
+                        <h5>Kadry</h5>
+                        <p>Kompleksowe zarządzanie danymi pracowników, umowami i dokumentami.</p>
+                    </button>
+                </Content>
+            </TileLayoutItem>
+            <TileLayoutItem>
+                <Content>
+                    <button type="button" class="tile glass tile-link" @onclick="@(() => OpenModule(Module.Place))" aria-label="Płace">
+                        <div class="tile-icon-wrapper">
+                            <TelerikSvgIcon Icon="@SvgIcon.Dollar" Size="xl" />
+                        </div>
+                        <h5>Płace</h5>
+                        <p>Automatyczne naliczanie wynagrodzeń, listy płac i deklaracje.</p>
+                    </button>
+                </Content>
+            </TileLayoutItem>
+            <TileLayoutItem>
+                <Content>
+                    <button type="button" class="tile glass tile-link" @onclick="@(() => OpenModule(Module.CzasPracy))" aria-label="Czas pracy">
+                        <div class="tile-icon-wrapper">
+                            <TelerikSvgIcon Icon="@SvgIcon.Clock" Size="xl" />
+                        </div>
+                        <h5>Czas pracy</h5>
+                        <p>Grafiki, ewidencja, urlopy i delegacje w jednym miejscu.</p>
+                    </button>
+                </Content>
+            </TileLayoutItem>
+            <TileLayoutItem>
+                <Content>
+                    <button type="button" class="tile glass tile-link" @onclick="@(() => OpenModule(Module.Portal))" aria-label="Portal pracownika">
+                        <div class="tile-icon-wrapper">
+                            <TelerikSvgIcon Icon="@SvgIcon.Globe" Size="xl" />
+                        </div>
+                        <h5>Portal pracownika</h5>
+                        <p>Samoobsługa — wnioski, paski i dane osobowe.</p>
+                    </button>
+                </Content>
+            </TileLayoutItem>
+            <TileLayoutItem>
+                <Content>
+                    <button type="button" class="tile glass tile-link" @onclick="@(() => OpenModule(Module.Integracje))" aria-label="Integracje">
+                        <div class="tile-icon-wrapper">
+                            <TelerikSvgIcon Icon="@SvgIcon.Connector" Size="xl" />
+                        </div>
+                        <h5>Integracje</h5>
+                        <p>Płatnik, ERP, T&A, bankowość — bezproblemowa wymiana danych.</p>
+                    </button>
+                </Content>
+            </TileLayoutItem>
+            <TileLayoutItem>
+                <Content>
+                    <button type="button" class="tile glass tile-link" @onclick="@(() => OpenModule(Module.Raporty))" aria-label="Raporty i analizy">
+                        <div class="tile-icon-wrapper">
+                            <TelerikSvgIcon Icon="@SvgIcon.ChartColumnStacked" Size="xl" />
+                        </div>
+                        <h5>Raporty i analizy</h5>
+                        <p>Zestawienia kadrowo‑płacowe i elastyczne analizy.</p>
+                    </button>
+                </Content>
+            </TileLayoutItem>
+        </TileLayoutItems>
+    </TelerikTileLayout>
+
+    <TelerikDialog @bind-Visible="_visible"
+                   Width="740px"
+                   Class="module-dialog-window">
+        <DialogTitle>
+            <div class="dialog-title-content">
+                <TelerikSvgIcon Icon="@GetIcon(_selected)" Size="lg" />
+                <span>@GetTitle(_selected)</span>
+            </div>
+        </DialogTitle>
+
+        <DialogContent>
+            <div class="module-dialog">
+                <div class="dialog-intro">
+                    <p>@GetIntro(_selected)</p>
+                </div>
+
+                <div class="dialog-features">
+                    <h6>Kluczowe funkcje:</h6>
+                    <ul class="dialog-bullets">
+                        @foreach (var point in GetBullets(_selected))
+                        {
+                            <li>
+                                <TelerikSvgIcon Icon="@SvgIcon.Check" Size="sm" />
+                                <span>@point</span>
+                            </li>
+                        }
+                    </ul>
+                </div>
+
+                <div class="dialog-benefits">
+                    @foreach (var benefit in GetBenefits(_selected))
+                    {
+                        <div class="benefit-badge">
+                            <TelerikSvgIcon Icon="@benefit.Icon" Size="md" />
+                            <span>@benefit.Text</span>
+                        </div>
+                    }
+                </div>
+            </div>
+        </DialogContent>
+
+        <DialogButtons>
+            <TelerikButton ThemeColor="@ThemeConstants.Button.ThemeColor.Primary"
+                           Class="k-button-lg dialog-action-btn"
+                           OnClick="@(() => GoTo(_selected))">
+                <TelerikSvgIcon Icon="@SvgIcon.ArrowRight" /> Dowiedz się więcej
+            </TelerikButton>
+            <TelerikButton ThemeColor="@ThemeConstants.Button.ThemeColor.Base"
+                           OnClick="@(() => _visible = false)">
+                Zamknij
+            </TelerikButton>
+        </DialogButtons>
+    </TelerikDialog>
+</div>
+
+@code {
+    [Inject] private NavigationManager Navigation { get; set; } = null!;
+
+    private bool _visible;
+    private Module _selected;
+
+    private void OpenModule(Module m)
+    {
+        _selected = m;
+        _visible = true;
+    }
+
+    private void GoTo(Module m) => Navigation.NavigateTo(GetLink(m));
+
+    private record Benefit(ISvgIcon Icon, string Text);
+
+    private static ISvgIcon GetIcon(Module m) => m switch
+    {
+        Module.Kadry => SvgIcon.User,
+        Module.Place => SvgIcon.Dollar,
+        Module.CzasPracy => SvgIcon.Clock,
+        Module.Portal => SvgIcon.Globe,
+        Module.Integracje => SvgIcon.Connector,
+        Module.Raporty => SvgIcon.ChartColumnStacked,
+        _ => SvgIcon.InfoCircle
+    };
+
+    private static string GetTitle(Module m) => m switch
+    {
+        Module.Kadry => "Kadry",
+        Module.Place => "Płace",
+        Module.CzasPracy => "Czas pracy",
+        Module.Portal => "Portal pracownika",
+        Module.Integracje => "Integracje",
+        Module.Raporty => "Raporty i analizy",
+        _ => "Moduł"
+    };
+
+    private static string GetIntro(Module m) => m switch
+    {
+        Module.Kadry => "Centralne miejsce dla danych pracowników, umów i dokumentów — zgodnie z przepisami prawa pracy.",
+        Module.Place => "Szybkie i pewne naliczanie list płac, automatyczne deklaracje oraz pełne rozliczenia z ZUS i US.",
+        Module.CzasPracy => "Harmonogramy, ewidencja i rozliczenia czasu pracy — wszystko zgodnie z Kodeksem pracy, zawsze pod ręką.",
+        Module.Portal => "Samoobsługa pracownicza: wnioski urlopowe, paski płacowe, dane osobowe i powiadomienia w jednym miejscu.",
+        Module.Integracje => "Łatwe połączenia z zewnętrznymi systemami: Płatnik, ERP, systemy czasu pracy i bankowość elektroniczna.",
+        Module.Raporty => "Gotowe zestawienia kadrowo‑płacowe i elastyczne analizy dla działu HR oraz zarządu.",
+        _ => ""
+    };
+
+    private static IEnumerable<string> GetBullets(Module m) => m switch
+    {
+        Module.Kadry => new[]
+        {
+            "Akta osobowe, dokumenty pracownicze i automatyczne przypomnienia",
+            "Pełna obsługa umów o pracę, umów zleceń i kontraktów B2B",
+            "Bezproblemowa integracja z modułami Czas pracy i Płace"
+        },
+        Module.Place => new[]
+        {
+            "Automatyczne naliczanie wynagrodzeń i generowanie list płac",
+            "Deklaracje ZUS, PIT i wszystkie wymagane rozliczenia",
+            "Wbudowana walidacja i kontrola błędów naliczeniowych"
+        },
+        Module.CzasPracy => new[]
+        {
+            "Tworzenie grafików pracy i ewidencja czasu rzeczywistego",
+            "Obsługa urlopów, nieobecności, delegacji i nadgodzin",
+            "Reguły rozliczeniowe zgodne z Kodeksem pracy"
+        },
+        Module.Portal => new[]
+        {
+            "Elektroniczne wnioski urlopowe i zgłaszanie nieobecności",
+            "Dostęp do pasków płacowych i danych osobowych",
+            "System powiadomień i elektroniczny obieg akceptacji"
+        },
+        Module.Integracje => new[]
+        {
+            "Płatnik, eDeklaracje, ePUAP i inne systemy ZUS/US",
+            "Integracja z systemami ERP/Finanse, T&A i bankowością",
+            "REST API oraz import/eksport plików w różnych formatach"
+        },
+        Module.Raporty => new[]
+        {
+            "Biblioteka gotowych raportów kadrowo‑płacowych",
+            "Narzędzia analityczne i interaktywne pulpity dla menedżerów",
+            "Eksport danych do XLSX, CSV, PDF"
+        },
+        _ => Array.Empty<string>()
+    };
+
+    private static IEnumerable<Benefit> GetBenefits(Module m) => m switch
+    {
+        Module.Kadry => new[]
+        {
+            new Benefit(SvgIcon.Star, "Zgodny z przepisami"),
+            new Benefit(SvgIcon.Lock, "Bezpieczny"),
+            new Benefit(SvgIcon.Gear, "Łatwy w obsłudze")
+        },
+        Module.Place => new[]
+        {
+            new Benefit(SvgIcon.Calculator, "Automatyczne obliczenia"),
+            new Benefit(SvgIcon.FileExcel, "Eksport do Excel"),
+            new Benefit(SvgIcon.Check, "Zgodność z ZUS/US")
+        },
+        Module.CzasPracy => new[]
+        {
+            new Benefit(SvgIcon.Calendar, "Elastyczne grafiki"),
+            new Benefit(SvgIcon.Clock, "Śledzenie czasu real-time"),
+            new Benefit(SvgIcon.Inbox, "E-wnioski urlopowe")
+        },
+        Module.Portal => new[]
+        {
+            new Benefit(SvgIcon.User, "Samoobsługa 24/7"),
+            new Benefit(SvgIcon.DevicesSolid, "Dostęp mobilny"),
+            new Benefit(SvgIcon.Bell, "Powiadomienia push")
+        },
+        Module.Integracje => new[]
+        {
+            new Benefit(SvgIcon.Code, "API REST"),
+            new Benefit(SvgIcon.Share, "Łatwa wymiana danych"),
+            new Benefit(SvgIcon.Code, "Dokumentacja techniczna")
+        },
+        Module.Raporty => new[]
+        {
+            new Benefit(SvgIcon.ChartLine, "Analizy predykcyjne"),
+            new Benefit(SvgIcon.FilePdf, "Export PDF/Excel"),
+            new Benefit(SvgIcon.Eye, "Dashboardy live")
+        },
+        _ => Array.Empty<Benefit>()
+    };
+
+    private static string GetLink(Module m) => m switch
+    {
+        Module.Kadry => "/produkt/kadry",
+        Module.Place => "/produkt/place",
+        Module.CzasPracy => "/produkt/czas-pracy",
+        Module.Portal => "/produkt/portal-pracownika",
+        Module.Integracje => "/produkt/integracje",
+        Module.Raporty => "/produkt/raporty",
+        _ => "/produkt"
+    };
+
+    private enum Module
+    {
+        Kadry,
+        Place,
+        CzasPracy,
+        Portal,
+        Integracje,
+        Raporty
+    }
+}
