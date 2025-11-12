@@ -6,11 +6,6 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
-
-
-	<ItemGroup>
-	  <None Include="DataComp.StronaFirmowa.Strona.Wasm.csproj" />
-	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="Telerik.UI.for.Blazor" Version="11.3.0" />
