@@ -28,13 +28,13 @@ jobs:
         dotnet-version: '9.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore Datacomp.StronaFirmowa.Strona/Datacomp.StronaFirmowa.Strona.csproj
+      run: dotnet restore DataComp.StronaFirmowa.Strona/DataComp.StronaFirmowa.Strona.csproj
 
     - name: Build
-      run: dotnet build Datacomp.StronaFirmowa.Strona/Datacomp.StronaFirmowa.Strona.csproj --configuration Release --no-restore
+      run: dotnet build DataComp.StronaFirmowa.Strona/DataComp.StronaFirmowa.Strona.csproj --configuration Release --no-restore
 
     - name: Publish
-      run: dotnet publish Datacomp.StronaFirmowa.Strona/Datacomp.StronaFirmowa.Strona.csproj -c Release -o release --nologo
+      run: dotnet publish DataComp.StronaFirmowa.Strona/DataComp.StronaFirmowa.Strona.csproj -c Release -o release --nologo
 
     - name: Add .nojekyll file
       run: touch release/wwwroot/.nojekyll
@@ -47,7 +47,7 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: release/wwwroot
-
+        
   deploy:
     needs: build
     runs-on: ubuntu-latest
