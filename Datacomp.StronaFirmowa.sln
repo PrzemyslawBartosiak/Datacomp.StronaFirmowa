@@ -9,6 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datacomp.StronaFirmowa.API"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataComp.StronaFirmowa.Strona", "DataComp.StronaFirmowa.Strona\DataComp.StronaFirmowa.Strona.csproj", "{75B7EA0B-1633-4848-9D7D-DDE0FAB048A6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{6862F5D0-6BE1-433B-9127-255A7169BE56}"
+	ProjectSection(SolutionItems) = preProject
+		C:\Users\p.bartosiak\Downloads\deploy.yml = C:\Users\p.bartosiak\Downloads\deploy.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +37,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6862F5D0-6BE1-433B-9127-255A7169BE56} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E77A7C75-E25D-4BA5-BCC9-F58CC49B118C}
