@@ -1,0 +1,81 @@
+﻿@inject IJSRuntime JS
+
+<div class="theme-switcher-wrapper">
+    <button class="theme-switcher-btn"
+            @onclick="CycleBrightness"
+            title="Przełącz jasność (5 poziomów)"
+            aria-label="Przełącznik jasności">
+        <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <span class="theme-label">@GetBrightnessLabel()</span>
+    </button>
+
+    <div class="theme-info">
+        <small>@BrightnessNames[CurrentBrightness]</small>
+    </div>
+</div>
+
+@code {
+    private int CurrentBrightness = 2; // Default: Aktualny
+
+    private readonly string[] BrightnessNames = new[]
+    {
+        "Bardzo jasny",
+        "Jasny",
+        "Aktualny",
+        "Ciemny",
+        "Bardzo ciemny"
+    };
+
+    private readonly string[] BrightnessEmojis = new[]
+    {
+        "☀️",  // Very light
+        "🌤️",  // Light
+        "🌓",  // Current
+        "🌙",  // Dark
+        "🌑"   // Very dark
+    };
+
+    protected override async Task OnInitializedAsync()
+    {
+        var savedBrightnessStr = await JS.InvokeAsync<string>("localStorage.getItem", "brightness-preference");
+
+        if (int.TryParse(savedBrightnessStr, out var savedBrightness) && savedBrightness >= 0 && savedBrightness < BrightnessNames.Length)
+        {
+            CurrentBrightness = savedBrightness;
+        }
+        else
+        {
+            CurrentBrightness = 2; // Default: Current
+        }
+
+        await ApplyBrightness(CurrentBrightness);
+    }
+
+    private async Task CycleBrightness()
+    {
+        CurrentBrightness = (CurrentBrightness + 1) % BrightnessNames.Length;
+        await ApplyBrightness(CurrentBrightness);
+        await JS.InvokeVoidAsync("localStorage.setItem", "brightness-preference", CurrentBrightness.ToString());
+        StateHasChanged();
+    }
+
+    private async Task ApplyBrightness(int levelIndex)
+    {
+        await JS.InvokeVoidAsync("applyBrightness", levelIndex);
+    }
+
+    private string GetBrightnessLabel()
+    {
+        return BrightnessEmojis[CurrentBrightness];
+    }
+}

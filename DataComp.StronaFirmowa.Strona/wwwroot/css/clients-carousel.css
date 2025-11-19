@@ -2,7 +2,7 @@
 .clients-section {
     background: linear-gradient(180deg, rgba(10, 18, 35, 0.98), rgba(15, 25, 50, 0.95));
     padding: 5rem 0;
-    margin-top: 4rem;
+    /*margin-top: 4rem;*/
     border-top: 2px solid rgba(0, 255, 163, 0.15);
     border-bottom: 2px solid rgba(0, 255, 163, 0.15);
     position: relative;

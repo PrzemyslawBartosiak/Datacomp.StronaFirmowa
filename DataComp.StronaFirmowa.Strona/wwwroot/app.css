@@ -19,16 +19,16 @@
     --text-secondary: #D5E1F5;
     --text-muted: #A8B9D3;
     /* ===== GRADIENTS ===== */
-    --gradient-main: linear-gradient(135deg, #0A0E3F 0%, #6528E0 40%, #00C9FF 80%);
+    --gradient-main: linear-gradient(135deg, #2a0d45 0%, #1338a0 35%, #0575b8 65%, #064839 100%);
     --gradient-accent: linear-gradient(90deg, #1EF6A3 0%, #00C9FF 100%);
     --gradient-purple-cyan: linear-gradient(135deg, #6528E0 0%, #00C9FF 100%);
     --gradient-glow: linear-gradient(135deg, #1EF6A3 0%, #B624FF 100%);
     /* ===== GLOW EFFECTS ===== */
-    --glow-green: 0 0 20px rgba(30, 246, 163, 0.8);
-    --glow-cyan: 0 0 20px rgba(0, 201, 255, 0.8);
-    --glow-purple: 0 0 20px rgba(101, 40, 224, 0.8);
-    --glow-magenta: 0 0 20px rgba(182, 36, 255, 0.8);
-    --glow-mixed: 0 0 30px rgba(30, 246, 163, 0.6), 0 0 60px rgba(101, 40, 224, 0.4);
+    --glow-green: 0 0 8px rgba(30, 246, 163, 0.4);
+    --glow-cyan: 0 0 8px rgba(0, 201, 255, 0.4);
+    --glow-purple: 0 0 8px rgba(101, 40, 224, 0.4);
+    --glow-magenta: 0 0 8px rgba(182, 36, 255, 0.4);
+    --glow-mixed: 0 0 12px rgba(30, 246, 163, 0.3), 0 0 20px rgba(101, 40, 224, 0.2);
     /* ===== SPACING & SIZING ===== */
     --border-radius-sm: 8px;
     --border-radius-md: 12px;
@@ -69,16 +69,22 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== LAYOUT ===== */
+/* ===== LAYOUT - FIX: brak paska miêdzy hero a carousel ===== */
 .page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 main {
     flex: 1;
-    padding-top: 0; /* ZMIENIONE: usuniête padding-top ¿eby usun¹æ pas */
+    padding-top: 0;
+    background: transparent;
+    margin: 0;
+    padding: 0;
 }
 
 /* ===== CONTAINER & WRAPPER ===== */
@@ -107,13 +113,13 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    text-shadow: var(--glow-mixed);
+    text-shadow: none;
 }
 
 h2 {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    text-shadow: var(--glow-cyan);
+    text-shadow: 0 0 4px rgba(0, 201, 255, 0.2);
 }
 
 h3 {
@@ -137,22 +143,22 @@ p {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(var(--glow-green));
+    filter: drop-shadow(0 0 4px rgba(30, 246, 163, 0.2));
 }
 
 .text-neon {
     color: var(--neon-green);
-    text-shadow: var(--glow-green);
+    text-shadow: none;
 }
 
 .text-cyan {
     color: var(--turquoise-blue);
-    text-shadow: var(--glow-cyan);
+    text-shadow: none;
 }
 
 .text-purple {
     color: var(--royal-purple);
-    text-shadow: var(--glow-purple);
+    text-shadow: none;
 }
 
 .text-muted {
@@ -199,7 +205,7 @@ p {
     font-size: 1rem;
     cursor: pointer;
     transition: all var(--transition-base);
-    box-shadow: var(--glow-green);
+    box-shadow: 0 0 12px rgba(30, 246, 163, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -215,7 +221,7 @@ p {
 
     .btn-neon:hover {
         transform: translateY(-2px);
-        box-shadow: var(--glow-green), 0 8px 24px rgba(30, 246, 163, 0.5);
+        box-shadow: 0 0 16px rgba(30, 246, 163, 0.4), 0 8px 24px rgba(30, 246, 163, 0.3);
     }
 
         .btn-neon:hover::before {
@@ -245,7 +251,7 @@ p {
 
     ::-webkit-scrollbar-thumb:hover {
         background: var(--gradient-purple-cyan);
-        box-shadow: var(--glow-cyan);
+        box-shadow: 0 0 8px rgba(0, 201, 255, 0.3);
     }
 
 /* ===== SELECTION STYLING ===== */
@@ -313,11 +319,11 @@ p {
 
 @keyframes glow-pulse {
     0%, 100% {
-        box-shadow: 0 0 20px rgba(30, 246, 163, 0.4);
+        box-shadow: 0 0 12px rgba(30, 246, 163, 0.3);
     }
 
     50% {
-        box-shadow: 0 0 40px rgba(30, 246, 163, 0.8);
+        box-shadow: 0 0 20px rgba(30, 246, 163, 0.5);
     }
 }
 
@@ -368,7 +374,7 @@ p {
     }
 
     main {
-        padding-top: 0; /* Utrzymane na 0 dla mobile */
+        padding-top: 0;
     }
 }
 
@@ -378,9 +384,10 @@ p {
     }
 
     main {
-        padding-top: 0; /* Utrzymane na 0 dla mobile */
+        padding-top: 0;
     }
 }
+
 @media (max-width: 576px) {
     html {
         font-size: 13px;

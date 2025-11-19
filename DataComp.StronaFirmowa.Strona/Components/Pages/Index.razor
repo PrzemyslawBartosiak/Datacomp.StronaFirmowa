@@ -3,14 +3,12 @@
 
 <PageTitle>Komax 2.0 - Nowoczesny system kadrowo-płacowy</PageTitle>
 
-<section class="hero-split">
+<section class="hero-split bg-vivid">
     <div class="hero-container">
         <!-- Lewa strona - Treść -->
         <div class="hero-content">
-            <span class="hero-badge">Komax 2.0</span>
-
             <h1 class="hero-title">
-                Kadry. Płace. Czas pracy.<br />
+                <span class="line-primary">Kadry. Płace. Czas pracy.</span><br />
                 <span class="highlight">Wszystko pod kontrolą.</span>
             </h1>
 
@@ -18,6 +16,8 @@
                 Komax automatyzuje rozliczenia wynagrodzeń, rozlicza czas pracy,
                 pilnuje urlopów i dokumentów — zawsze zgodnie z aktualnymi przepisami.
             </p>
+
+            <div class="hero-separator" aria-hidden="true"></div>
 
             <div class="hero-features">
                 <div class="feature-badge">
@@ -48,26 +48,70 @@
                     <TelerikSvgIcon Icon="@SvgIcon.ArrowRight" /> Poznaj produkt
                 </TelerikButton>
             </div>
-
-            <div class="trust-indicator">
-                <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" Class="trust-icon" />
-                <div class="trust-text">
-                    <strong>Zgodność z prawem pracy</strong>
-                    <span>i pełne bezpieczeństwo danych</span>
-                </div>
-            </div>
         </div>
 
         <!-- Prawa strona - Mockup -->
         <div class="hero-visual">
+            <svg aria-hidden="true" focusable="false" width="0" height="0" style="position:absolute">
+                <defs>
+                    <filter id="edge-bolt" x="-35%" y="-35%" width="170%" height="170%" color-interpolation-filters="sRGB">
+                        <feMorphology in="SourceAlpha" operator="dilate" radius="2" result="OUTER" />
+                        <feMorphology in="SourceAlpha" operator="erode" radius="0.9" result="INNER" />
+                        <feComposite in="OUTER" in2="INNER" operator="out" result="RING" />
+                        <feFlood flood-color="#00C9FF" result="CYAN" />
+                        <feComposite in="CYAN" in2="RING" operator="in" result="CYAN_RING" />
+                        <feGaussianBlur in="CYAN_RING" stdDeviation="6" result="CYAN_G1" />
+                        <feGaussianBlur in="CYAN_RING" stdDeviation="24" result="CYAN_G2" />
+                        <feGaussianBlur in "CYAN_RING" stdDeviation="64" result="CYAN_G3" />
+                        <feFlood flood-color="#1EF6A3" result="GREEN" />
+                        <feComposite in="GREEN" in2="RING" operator="in" result="GREEN_RING" />
+                        <feGaussianBlur in="GREEN_RING" stdDeviation="4" result="GREEN_G1" />
+                        <feGaussianBlur in="GREEN_RING" stdDeviation="18" result="GREEN_G2" />
+                        <feGaussianBlur in="GREEN_RING" stdDeviation="48" result="GREEN_G3" />
+                        <feImage x="0" y="0" width="100%" height="100%" result="WEDGE"
+                                 preserveAspectRatio="xMidYMid slice"
+                                 xlink:href="data:image/svg+xml;utf8,
+                     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>
+                       <defs>
+                         <radialGradient id='g' cx='50%%' cy='50%%' r='60%%'>
+                           <stop offset='0' stop-color='white'/>
+                           <stop offset='1' stop-color='white' stop-opacity='0'/>
+                         </radialGradient>
+                       </defs>
+                       <g>
+                         <path d='M50,50 L100,48 L100,52 Z' fill='url(%23g)'/>
+                         <animateTransform attributeName='transform' type='rotate'
+                                           from='0 50 50' to='360 50 50'
+                                           dur='6s' repeatCount='indefinite'/>
+                       </g>
+                     </svg>"/>
+                        <feComposite in="WEDGE" in2="RING" operator="in" result="HILIGHT_MASK" />
+                        <feFlood flood-color="#CFFFF7" result="HILIGHT_COLOR" />
+                        <feComposite in="HILIGHT_COLOR" in2="HILIGHT_MASK" operator="in" result="HILIGHT" />
+                        <feGaussianBlur in="HILIGHT" stdDeviation="2" result="HILIGHT_SOFT" />
+                        <feGaussianBlur in="HILIGHT" stdDeviation="7" result="HILIGHT_GLOW" />
+                        <feMerge>
+                            <feMergeNode in="CYAN_G3" />
+                            <feMergeNode in="GREEN_G3" />
+                            <feMergeNode in="CYAN_G2" />
+                            <feMergeNode in="GREEN_G2" />
+                            <feMergeNode in="CYAN_G1" />
+                            <feMergeNode in="GREEN_G1" />
+                            <feMergeNode in="HILIGHT_GLOW" />
+                            <feMergeNode in="HILIGHT_SOFT" />
+                            <feMergeNode in="SourceGraphic" />
+                        </feMerge>
+                    </filter>
+                </defs>
+            </svg>
+
             <div class="mockup-wrapper">
-                <img src="/images/AdobeStock_565062689.jpeg"
+                <img src="/images/Laptop.webp"
                      alt="Komax 2.0 - Dostępny na każdym urządzeniu"
-                     class="mockup-image"
+                     class="mockup-image edge-bolt"
                      loading="eager" />
 
-                <!-- Floating card z statystykami -->
-                <div class="floating-card">
+                @* <div class="floating-card floating-card--top-right">
                     <div class="card-content">
                         <div class="stat-group">
                             <TelerikSvgIcon Icon="@SvgIcon.User" Class="stat-icon" />
@@ -84,29 +128,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Floating badge -->
-                <div class="floating-badge">
-                    <TelerikSvgIcon Icon="@SvgIcon.CheckCircle" />
-                    <span>99.9% uptime</span>
-                </div>
+                </div> *@
             </div>
         </div>
     </div>
 </section>
-
-<!-- Sekcja z produktami/funkcjami -->
-<div class="wrap">
-    <section class="features-section">
-        <div class="section-header">
-            <h2>Kompleksowe rozwiązanie dla Twojej firmy</h2>
-            <p class="section-lead">Wszystko czego potrzebujesz w jednym systemie</p>
-        </div>
-
-        <!-- Tu możesz dodać kafelki z modułami (Kadry, Płace, etc.) -->
-    </section>
-</div>
 
 @code {
     [Inject] private NavigationManager Navigation { get; set; } = default!;
